@@ -1,0 +1,434 @@
+.clear{clear:both;}
+.ticket-dashboard {
+    background: #eee;
+    padding: 0;
+	border:1px solid #eee;
+    width: 100%;
+}
+.ticket-dashboard button.tbtn-button.button {
+    color: #fff;
+    background-color: #bf8864;
+    padding: 12px 35px;
+}
+#generate-random{
+    color: #fff;
+    background-color: #bf8864;
+}
+.ticket-dashboard .ticket-wrapper {
+    padding: 0.5rem 0.5rem 0;
+}
+ul.my-tickets{
+	margin: 0 0 1rem;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+	position:relative;
+}
+ul.my-tickets li{
+	width: 32px;
+    height: 32px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    background: rgba(0,0,0,0);
+    margin: 0 0 7px 0;
+	position:relative;
+}
+ul.my-tickets li label{
+	position:relative;
+	display:block;
+}
+ul.my-tickets li span{
+    text-decoration: none;
+    font-size: 10px;
+    line-height: 32px;
+    vertical-align: middle;
+	position: absolute;
+	top:0;
+    left: 0;
+    right: 0;
+	color:#fff;
+	outline:none;
+	cursor:pointer;
+	background-image: url(available-seat.png);
+    background-size: cover;
+	
+}
+.ticket-dashboard h4 {
+    text-transform: uppercase;
+    font-size: 1rem;
+    text-align: left;
+    margin: 0 0 .5rem;
+	float:left;
+	width:50%;
+}
+.ticket-dashboard .seat-available{
+	text-transform: uppercase;
+    font-size: 1rem;
+    text-align: right;
+    margin: 0 0 .5rem;
+	float:left;
+	width:50%;
+}
+.ticket-dashboard h4 strong{
+	margin-left:1rem;
+	color:#999;
+}
+
+.single-product form.cart .ticket-dashboard .ticket-box{
+	width:100%;
+	border:none;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+	appearance: none;
+    position: relative;
+}
+.single-product form.cart .ticket-dashboard .ticket-box:after{display:none;}
+.ticket-dashboard input[type=checkbox]:focus{
+	outline:none;
+}
+.ticket-dashboard input[type=checkbox]:checked+span {
+    color:#fff;
+	outline-color:#0f5132;
+	background-image: url(reserve-seat.png);
+}
+/* === Reserved seat (temporary hold) === */
+.ticket-dashboard input[type=checkbox].rbtn-tt-temp:disabled + span {
+    color: #fff;
+    outline-color: #999;
+    background-image: url(reserve-seat.png);
+    cursor: not-allowed;
+}
+
+/* === Taken seat (permanently booked) === */
+.ticket-dashboard input[type=checkbox].rbtn-tt-perma:disabled + span {
+    color: #fff;
+    outline-color: #999;
+    background-image: url(taken-seat.png);
+    cursor: not-allowed;
+}
+
+.ticket-dashboard .proceed-cart-info{
+    width: 100%;
+    background: #fff;
+    padding: .5rem;
+    transition: 0.5s all;
+	z-index:999;
+}
+.ticket-dashboard .proceed-cart-info ul{
+	list-style:none;
+	text-align:center;
+	margin:0;
+	padding:0;
+}
+.ticket-dashboard .proceed-cart-info ul li{
+	display:inline-block;
+	margin:0 0.5rem;
+	font-size:1rem;
+}
+.ticket-dashboard span.tbtn{
+	width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    color: #6faa5a;
+    outline: 2px solid #2f4826;
+    cursor: pointer;
+    background-color: #6faa5a;
+}
+.ticket-dashboard span.tbtn-sold{
+    color: #861919;
+    outline-color: #4b0e0e;
+    background-color: #b62323;
+}
+.ticket-dashboard span.tbtn-selected{
+    color: #69563f;
+    outline-color: #69563f;
+    background-color: #f5c392;
+}
+
+.ticket-dashboard .proceed-cart {
+	display: none;
+    width: 100%;
+    background: #fff;
+    padding: 0.5rem 0;
+    transition: 0.5s all;
+    text-align: center;
+}
+.ticket-dashboard .tbtn-button{
+	float:none !important;
+}
+.ticket-dashboard .prc-qty{
+	font-size:1rem;
+	margin: 0 0 .5rem;
+	
+}
+.list-ticket-avialble{color:#5d5d5d}
+.list-ticket-avialble span{
+	text-transform:capitalize;
+	color:#333;
+}
+.ticket-dashboard input[type=checkbox].wait+span{
+	opacity:0.8;
+}
+.ticket-dashboard input[type=checkbox].wait+span:after{
+	content: "";
+    width: 80%;
+    height: 80%;
+    background: url(loader.gif) no-repeat;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    z-index: 100;
+    background-size: 100%;
+}
+.availabilitycheck-msg {
+    text-align: center;
+    background: pink;
+    color: red;
+    padding: 5px 15px;
+	display:none;
+}
+
+/*tickect layout and popup css **/
+
+table.variations, .woocommerce-variation.single_variation, .single_variation_wrap div.quantity, .single_variation_wrap .single_add_to_cart_button{
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	word-break: normal;
+}
+.smw-seat-dialog {
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 6px;
+    padding: 0;
+    z-index: 100000;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    border: 2px solid #e5e7eb;
+}
+
+/* HEADER */
+.smw-dialog-header {
+    background: #111827;
+    color: #e5e7eb;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.smw-dialog-quote {
+    font-size: 13px;
+    max-width: 70%;
+}
+
+.smw-dialog-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.smw-header-btn {
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 13px;
+    border: 1px solid rgba(156,163,175,0.9);
+    background: transparent;
+    color: #f9fafb;
+    cursor: pointer;
+}
+
+.smw-go-cart-btn {
+    background: #2563eb;
+    border-color: #2563eb;
+    text-decoration: none;
+}
+
+.smw-header-btn:hover {
+    opacity: 0.9;
+}
+
+.smw-close-x {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    border: 0;
+    background: transparent;
+    font-size: 22px;
+    color: #9ca3af;
+    cursor: pointer;
+}
+
+/* BODY / COLUMNS */
+.smw-dialog-body {
+    display: flex;
+    max-height: 80vh;
+    background: #f9fafb;
+}
+
+.smw-col {
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.smw-col-left {
+    width: 25%;
+    border-right: 1px solid #e5e7eb;
+    background: #f3f4f6;
+}
+
+.smw-col-middle {
+    width: 50%;
+    border-right: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.smw-col-right {
+    width: 25%;
+    background: #ffffff;
+}
+
+/* LEFT */
+.smw-left-image img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    margin-bottom: 12px;
+}
+
+.smw-left-tabs {
+    display: flex;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 8px;
+}
+
+.smw-left-tabs button {
+    border: 0;
+    background: transparent;
+    padding: 4px 0;
+    margin-right: 16px;
+    font-size: 13px;
+    color: #6b7280;
+    cursor: pointer;
+}
+
+.smw-left-tabs button.active {
+    color: #dc2626;
+    border-bottom: 2px solid #dc2626;
+}
+
+.smw-left-desc p {
+    font-size: 12px;
+    color: #4b5563;
+    margin-bottom: 4px;
+}
+
+/* MIDDLE */
+.smw-seat-title {
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding: 6px 10px;
+    margin: 0 0 10px;
+    background: #111827;
+    color: #f9fafb;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+/* Make existing seats tighter */
+.ticket-dashboard .rseat-container h4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticket-dashboard ul.my-tickets li {
+    display: inline-block;
+}
+
+/* RIGHT */
+.smw-right-inner {
+    position: relative;
+    padding-top: 4px;
+}
+
+.smw-right-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.smw-right-sub {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 16px;
+}
+
+.smw-right-box {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-bottom: 16px;
+}
+
+.smw-right-seats {
+    font-size: 13px;
+    color: #4b5563;
+    margin-bottom: 4px;
+}
+
+.smw-right-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #dc2626;
+}
+
+.smw-right-btn {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 0;
+    background: #dc2626;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.smw-right-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Popup Fixing */
+.single-product.woocommerce form.variations_form.cart {
+    position: unset !important;
+}
+
+.single-product.woocommerce form.variations_form.cart .smw-seat-modal {
+    width: 100%;
+    position: absolute;
+    max-width: 100%;
+    display: block;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}

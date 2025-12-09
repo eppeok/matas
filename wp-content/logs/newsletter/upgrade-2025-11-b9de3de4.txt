@@ -1,0 +1,38 @@
+11-11-2025 05:57:47 - INFO  - 9.0.7 - 11.0 MB/512 MB - roy.sawan@gmail.com > Start upgrade from 0.0.0
+11-11-2025 05:57:47 - INFO  - 9.0.7 - 10.5 MB/512 MB - roy.sawan@gmail.com > Array
+(
+    [`wp_newsletter_emails`] => Created table `wp_newsletter_emails`
+)
+
+11-11-2025 05:57:47 - INFO  - 9.0.7 - 10.5 MB/512 MB - roy.sawan@gmail.com > Array
+(
+    [`wp_newsletter_sent`] => Created table `wp_newsletter_sent`
+)
+
+11-11-2025 05:57:47 - INFO  - 9.0.7 - 10.5 MB/512 MB - roy.sawan@gmail.com > Array
+(
+    [`wp_newsletter`] => Created table `wp_newsletter`
+)
+
+11-11-2025 05:57:47 - INFO  - 9.0.7 - 10.5 MB/512 MB - roy.sawan@gmail.com > Array
+(
+    [`wp_newsletter_user_logs`] => Created table `wp_newsletter_user_logs`
+)
+
+11-11-2025 05:57:47 - INFO  - 9.0.7 - 10.5 MB/512 MB - roy.sawan@gmail.com > Array
+(
+    [`wp_newsletter_user_meta`] => Created table `wp_newsletter_user_meta`
+)
+
+11-11-2025 05:57:47 - INFO  - 9.0.7 - 10.5 MB/512 MB - roy.sawan@gmail.com > Array
+(
+    [`wp_newsletter_stats`] => Created table `wp_newsletter_stats`
+)
+
+11-11-2025 05:57:47 - INFO  - 9.0.7 - 10.5 MB/512 MB - roy.sawan@gmail.com > Array
+(
+    [`wp_newsletter_logs`] => Created table `wp_newsletter_logs`
+)
+
+11-11-2025 05:57:47 - INFO  - 9.0.7 - 10.5 MB/512 MB - roy.sawan@gmail.com > Backing up options of 0.0.0
+11-11-2025 05:57:47 - INFO  - 9.0.7 - 10.5 MB/512 MB - roy.sawan@gmail.com > End
