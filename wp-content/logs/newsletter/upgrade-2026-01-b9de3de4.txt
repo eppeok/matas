@@ -1,0 +1,39 @@
+21-01-2026 00:19:18 - INFO  - 9.1.1 - 15.9 MB/512 MB -  > Start upgrade from 9.1.0
+21-01-2026 00:19:18 - INFO  - 9.1.1 - 14.9 MB/512 MB -  > Array
+(
+    [`wp_newsletter_emails`] => Created table `wp_newsletter_emails`
+)
+
+21-01-2026 00:19:18 - INFO  - 9.1.1 - 14.9 MB/512 MB -  > Array
+(
+    [`wp_newsletter_sent`] => Created table `wp_newsletter_sent`
+)
+
+21-01-2026 00:19:18 - INFO  - 9.1.1 - 14.9 MB/512 MB -  > Array
+(
+    [`wp_newsletter`] => Created table `wp_newsletter`
+)
+
+21-01-2026 00:19:18 - INFO  - 9.1.1 - 14.9 MB/512 MB -  > Array
+(
+    [`wp_newsletter_user_logs`] => Created table `wp_newsletter_user_logs`
+)
+
+21-01-2026 00:19:18 - INFO  - 9.1.1 - 14.9 MB/512 MB -  > Array
+(
+    [`wp_newsletter_user_meta`] => Created table `wp_newsletter_user_meta`
+)
+
+21-01-2026 00:19:18 - INFO  - 9.1.1 - 14.9 MB/512 MB -  > Array
+(
+    [`wp_newsletter_stats`] => Created table `wp_newsletter_stats`
+)
+
+21-01-2026 00:19:18 - INFO  - 9.1.1 - 14.8 MB/512 MB -  > Array
+(
+    [`wp_newsletter_logs`] => Created table `wp_newsletter_logs`
+    [wp_newsletter_logs.status] => Changed type of wp_newsletter_logs.status from int(11) to int
+)
+
+21-01-2026 00:19:18 - INFO  - 9.1.1 - 14.9 MB/512 MB -  > Backing up options of 9.1.0
+21-01-2026 00:19:18 - INFO  - 9.1.1 - 15.0 MB/512 MB -  > End
