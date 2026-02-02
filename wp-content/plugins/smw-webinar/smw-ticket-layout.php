@@ -135,18 +135,18 @@ if ( $product->is_purchasable() ) {
 
                     <?php
                     if ( isset( $options['randomGenerator_restrict'] ) && $options['randomGenerator_restrict'] == 1 ) {
-                        echo '<div class="randomGenerator" id="randomGenerator">';
-                        echo '<button id="generate-random">Random Seat Generator</button></div>';
                         /*echo '<div class="randomGenerator" id="randomGenerator">';
+                        echo '<button id="generate-random">Random Seat Generator</button></div>';*/
+                        echo '<div class="randomGenerator" id="randomGenerator">';
 
                         echo '<div class="random-seat-controls">';
-                        echo '<label for="random-seat-count">Number of Random Seats:</label>';
-                        echo '<input type="number" id="random-seat-count" value="1" min="1" step="1">';
+                        //echo '<label for="random-seat-count">Number of Random Seats:</label>';
+                        echo '<input type="number" class="input-text" id="random-seat-count" placeholder="Random Seat Quantity" min="1" max="40">';
                         echo '</div>';
 
                         echo '<button id="generate-random" class="button alt">Select Random Seats</button>';
 
-                        echo '</div>';*/
+                        echo '</div>';
                         ?>
                         <style>
                             .prc-qty { display:none; }

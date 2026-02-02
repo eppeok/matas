@@ -239,7 +239,7 @@ function startGlobalHeaderTimer() {
     /********************
      * Random Generator (original)
      ********************/
-   function getMultipleRandom(arr, num) {
+  /* function getMultipleRandom(arr, num) {
       const shuffled = [...arr].sort(() => 0.5 - Math.random());
       return shuffled.slice(0, num);
     }
@@ -267,13 +267,13 @@ $("#generate-random").on("click", function (e) {
   // pick a random index and trigger click on that checkbox
   var randIndex = Math.floor(Math.random() * $available.length);
   $($available[randIndex]).trigger("click");
-});
+});*/
 
     /********************
      * MULTI RANDOM SEAT GENERATOR (Number Input Version)
      ********************/
 
-    /*function getAvailableSeats() {
+    function getAvailableSeats() {
         return jQuery(".my-tickets input[type=checkbox]")
             .not(".rbtn-tt-perma")
             .not(".rbtn-tt-temp")
@@ -333,7 +333,7 @@ $("#generate-random").on("click", function (e) {
     // When modal opens
     jQuery(document).on("click", "#smw-open-seat-modal", function(){
         setTimeout(validateSeatInput, 300);
-    });*/
+    });
 
     /********************
      * Seat Selection (modified: uses sessionStorage)
