@@ -5,3 +5,34 @@ Theme Name: Matas Theme
 Author: Evolv109 Labs
 Version: 2.1
 */
+
+/* Single product: align quantity and add to cart button */
+.single-product form.cart {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Quantity box */
+.single-product form.cart .quantity {
+    margin: 0;
+}
+
+.single-product form.cart .quantity input.qty {
+    width: 80px;
+    height: 48px;
+    text-align: center;
+}
+
+/* Add to cart button */
+.single-product form.cart .single_add_to_cart_button {
+    height: 48px;
+    padding: 0 28px;
+    white-space: nowrap;
+}
+
+.single-product p.stock.in-stock {
+    color: #4a5565 !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+}

@@ -13,7 +13,7 @@
                 </div>
                 <div class="lower_part">
                     <div class="row">
-                        <div class="col-lg-8  col-md-8 col-sm-12 footer-newsletter">
+                        <div class="col-lg-8  col-md-8 col-sm-12 footer-newsletter" id="newsletter">
                             <p class="newsletter-text">
                                <?php echo the_field('newsletter_heading', $frontpage_id ) ?>
                             </p>

@@ -41,6 +41,10 @@ function myFunction() {
                 slidesToShow: 3.5,
                 slidesToScroll: 1,
                 arrows: false,
+			    autoplay: true,
+                autoplaySpeed: 3000, // 3 seconds
+                pauseOnHover: true,
+                pauseOnFocus: true,
                 responsive: [
                     {
                         breakpoint: 1024,

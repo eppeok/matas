@@ -31,7 +31,6 @@ if ( ! $short_description ) {
 <div class="woocommerce-product-details__additional-description">
 <?php if(get_field('instructor_name') || get_field('start_date')){ ?>
 <p>Instructor: <?php the_field('instructor_name'); ?></p>
-<p>Date: <?php the_field('start_date'); ?></p>	
 <?php } ?>
 </div>
 <div class="woocommerce-product-details__short-description">

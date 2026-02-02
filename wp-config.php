@@ -92,7 +92,7 @@ $table_prefix = 'wp_';
 if ( ! defined( 'WP_DEBUG' ) ) {
 	define( 'WP_DEBUG', false );
 }
-
+define( 'SMW_API_TOKEN', 'smw_7d92jF92j39Kds02jS9djs02J' );
 define( 'FS_METHOD', 'direct' );
 define( 'COOKIEHASH', 'f40945862da138d0776341000c58186d' );
 define( 'WP_AUTO_UPDATE_CORE', 'minor' );

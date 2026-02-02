@@ -746,7 +746,10 @@ p.sub_heading {
 	border-top-right-radius: 8px;
 	margin: 20px 0;
 }
-
+.woocommerce ul.products li.product a.woocommerce-loop-product__link {
+    display: block;
+    width: 100%;
+}
 .new_webinar .card-body {
 	padding: 1.25rem 1.5rem;
 	text-align: center;
@@ -1215,7 +1218,7 @@ a.social-icon svg:hover {
     padding-left: 0;
     padding-right: 0;
     position: relative;
-    display: inline-block !important;
+    display: flex !important;
     float: unset;
     margin: 10px !important;
     border: 1px solid #0000001a;
@@ -1223,15 +1226,18 @@ a.social-icon svg:hover {
             0 8px 10px -6px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     width: calc(25% - 24px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 .woocommerce ul.products li.product a img {
     display: inline-block;
     width: 100% !important;
-    height: 100% !important;
+    height: 250px !important;
     max-width: 100% !important;
     object-fit: cover !important;
-	border-radius:10px 10px 0 0;
-	padding-top:24px;
+    border-radius: 10px 10px 0 0;
+    padding-top: 24px;
 }
 .woocommerce .products ul, .woocommerce ul.products {
     display: flex;
@@ -1493,7 +1499,7 @@ h1.page-title, .jvm-woocommerce-wishlist-page .main-content h1.page-title{
     font-size: 18px !important;
     font-weight: 400 !important;
 }
-.woocommerce div.product form.cart .button {
+.woocommerce div.product form.cart button#smw-open-seat-modal {
     vertical-align: middle;
     float: unset;
     width: 100% !important;
@@ -1574,6 +1580,50 @@ section.related.products .slick-track li.product {
     font-size: 18px !important;
     margin: auto;
 }
+/* FAQ */
+.accordion-button::after {
+    content: "+";
+}
+.accordion-button:not(.collapsed)::after {
+    content: "-";
+	 transform: unset;
+}
+.accordion-button:not(.collapsed) {
+    color: #dc3545;
+    background-color: #fbe0e3;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+}
+.accordion-button:focus {
+    border-color: transparent;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgb(13 110 253 / 0%);
+}
+.accordion-button{
+    font-weight: 500;
+    font-size: 22px;
+    text-transform: capitalize;
+}
+.accordion {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+}
+.accordion-item {
+    border: none;
+    border-bottom: 1px solid #bbbbbb;
+/*     padding-block: 8px; */
+}
+.general-inner-page h1.page-title {
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 40px;
+	font-family: var(--headingFont);
+	color: var(--themeBlack);
+}
+.accordion-body {
+    line-height: 1.3;
+}
+
 /* SMW plugin */
 .overlay{
 	background: rgba(0, 0, 0, 0.4) !important;
@@ -1812,6 +1862,31 @@ ul.wp-block-list {
 .single-product .related.products h2{
 	font-family:var(--bodyFont);
 }
+/* TOS */
+.page-id-25 .general-inner-page li {
+    list-style: unset;
+    margin-left: 40px;
+}
+h1.page-title {
+    line-height: 1.2;
+}
+div#smw-global-seat-timer {
+    padding: 12px 10px;
+    text-align: center;
+    color: red;
+    font-weight: 500;
+    font-size: 20px;
+}
+/* div#smw-global-seat-timer {
+    padding: 12px 10px;
+    text-align: center;
+    color: red;
+    font-weight: 500;
+    font-size: 20px;
+    background: #FEECEC;
+    width: 100% !important;
+    max-width: 100% !important;
+} */
 /* ANIMATION START */
 .pulse {
 	-webkit-animation: pulse-animation 2s infinite;
@@ -1888,9 +1963,42 @@ ul.wp-block-list {
 @media (min-width: 1500px) {
 	.equipment-card { 
 		width: 320px !important;
+}	
+	footer.setPosition.site-footer .container {
+    max-width: 1600px;
+    padding: 0;
+}
+	.footer_img {
+    padding-inline: 20px;
+    width: 100%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+	.footer_img img {
+    width: 100%;
 }
 }
-@media (min-width: 2500px) {
+@media (min-width: 2000px) {
+	.container { 
+		max-width: 1600px;
+        margin: auto;
+}
+.equipment-card {
+    width: 400px !important;
+}
+	.new_webinar .card img {
+    width: 100%;
+    height: 250px;
+}
+	.cta-section {
+    max-width: 910px;
+}
+	.footer-links-column strong, .footer-links-column li a {
+    color: #fff;
+    font-size: 18px;
+}
+}
+/* @media (min-width: 2500px) {
 	html {
 		font-size: 32px;
 	}
@@ -1906,7 +2014,7 @@ ul.wp-block-list {
 	html {
 		font-size: 60px;
 	}
-}
+} */
 @media (max-width:1399px) {
 .main_header .container {
     width: 100% !important;
@@ -1946,6 +2054,9 @@ ul.wp-block-list {
 }
 
 @media (max-width:1024px) {
+	.home_banner_section .px-5{
+		padding:0px !important;
+	}
 	.form-part h3 br {
 		display: none;
 	}
@@ -2281,6 +2392,25 @@ input#tnp-1 {
 }
 	.privacy-policy .general-inner-page .container, .page-id-25 .general-inner-page .container {
     padding: 10px 20px;
+}
+	.accordion-button{
+    font-size: 19px;
+}
+.accordion-item {
+/*     padding-block: 4px; */
+}
+.general-inner-page h1.page-title {
+    font-weight: 700;
+    font-size: 36px;
+}
+	.accordion-body {
+	font-size:16px;
+}
+	.general-inner-page h1.page-title {
+    margin-bottom: 20px;
+}
+	.accordion {
+    max-width: 100%;
 }
 }
 @media (max-width:767px)and (min-width:530px){

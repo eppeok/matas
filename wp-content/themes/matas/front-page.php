@@ -9,7 +9,7 @@ get_header();
                 <!-- Banner Section -->
                 <section class="setPosition commonPadding home_banner_section bg_position_set"
                     style="background-image: url(<?php the_field('banner_image'); ?>);">
-                       <div class="container-fluide">
+                       <div class="container">
                         <div class="row align-items-center">
                             <div data-aos="fade-up" class="col-lg-6 col-md-8 col-sm-12 px-5">
                                 <div class="banner_card">
@@ -17,7 +17,7 @@ get_header();
                                     <p class="sub_heading"><?php the_field('banner_subheading'); ?></p>
                                 </div>
                                 <div class="button_box">
-                                    <a href="<?php the_field('banner_button_link_1'); ?>" class="btn_primary commonHoverEffect" data-aos="flip-up"><?php the_field('banner_button_text_1'); ?></a>
+                                    <a href="<?php the_field('banner_button_link_1'); ?>" target="_blank" class="btn_primary commonHoverEffect" data-aos="flip-up"><?php the_field('banner_button_text_1'); ?></a>
                                     <a href="<?php the_field('banner_button_link_2'); ?>" class="btn_secondary commonHoverEffect" data-aos="flip-up"><?php the_field('banner_button_text_2'); ?></a>
                                 </div>
                             </div>
