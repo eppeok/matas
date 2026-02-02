@@ -160,7 +160,12 @@ const NewsletterComposer = {
                 NewsletterComposer.set_composer_options(res.data.globalOptions);
                 NewsletterComposer.set_subject(res.data.subject);
 
+                jQuery('#tnpb-settings-apply').click();
+
+                NewsletterComposer.refresh_style();
                 NewsletterComposer.init_builder();
+
+                //jQuery(".tnpc-color").spectrum();
 
                 jQuery.modal.close();
             },
@@ -189,9 +194,10 @@ const NewsletterComposer = {
     set_composer_options: function (options) {
         // It's an object
         for (const [key, value] of Object.entries(options)) {
-            let el = document.getElementById('options-options_composer_' + key);
-            if (el) {
-                el.value = value;
+            let el = jQuery('#options-options_composer_' + key);
+            el.val(value);
+            if (el.hasClass('tnpc-color')) {
+                el.spectrum('set', value);
             }
         }
     },

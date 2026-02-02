@@ -195,6 +195,37 @@ function smw_woo_ajax_function(){
 add_action( 'wp_ajax_nopriv_smw_woo_ajax_function', 'smw_woo_ajax_function' );
 add_action( 'wp_ajax_smw_woo_ajax_function', 'smw_woo_ajax_function' );
 
+/**
+ * Release seats immediately when cart item is removed
+ */
+add_action('woocommerce_remove_cart_item', 'smw_release_seats_on_cart_remove', 10, 2);
+add_action('woocommerce_cart_item_removed', 'smw_release_seats_on_cart_remove', 10, 2);
+
+function smw_release_seats_on_cart_remove($cart_item_key, $cart) {
+
+    $cart_item = $cart->removed_cart_contents[$cart_item_key] ?? null;
+    if (!$cart_item) {
+        return;
+    }
+
+    $product_id   = $cart_item['product_id'];
+    $variation_id = $cart_item['variation_id'];
+
+    if (!smw_woo_product_seat($product_id)) {
+        return;
+    }
+
+    if (empty($cart_item['seat'])) {
+        return;
+    }
+
+    $seats = explode(',', $cart_item['seat']);
+
+    foreach ($seats as $seat) {
+        $seat = trim($seat);
+        delete_post_meta($variation_id, 'temp_booked_seat_' . $seat);
+    }
+}
 
 function get_available_ticket_count($product_id){
 	$product = wc_get_product($product_id);
@@ -416,14 +447,45 @@ function smw_woo_product_seat($product_id){
 		return true;
 	}
 }
-function smw_woo_login_check(){
-	$options = get_option( 'smw_woo_settings' );
-	if($options['login_restrict']==1){
-		if ( !is_user_logged_in() ) {
-			return array('status' => true, 'text' => $options['login_button_text']);
-		}
-	}
-	return array('status' => false);
+function smw_woo_login_check() {
+    $options = get_option( 'smw_woo_settings' );
+
+    if ( ! empty( $options['login_restrict'] ) && $options['login_restrict'] == 1 ) {
+
+        if ( ! is_user_logged_in() ) {
+
+            // Always get correct current page
+            $current_url = ( is_singular() )
+                ? get_permalink()
+                : home_url( add_query_arg( null, null ) );
+
+            $login_url = wc_get_page_permalink( 'myaccount' );
+
+            $login_url = add_query_arg(
+                'redirect_to',
+                rawurlencode( $current_url ),
+                $login_url
+            );
+
+            return array(
+                'status'    => true,
+                'text'      => $options['login_button_text'],
+                'login_url' => esc_url( $login_url ),
+            );
+        }
+    }
+
+    return array( 'status' => false );
+}
+
+add_filter( 'woocommerce_login_redirect', 'smw_redirect_after_login', 10, 2 );
+function smw_redirect_after_login( $redirect, $user ) {
+
+    if ( ! empty( $_REQUEST['redirect_to'] ) ) {
+        return esc_url_raw( $_REQUEST['redirect_to'] );
+    }
+
+    return $redirect;
 }
 
 add_action('template_redirect', 'smw_woo_show_notice');
@@ -511,7 +573,7 @@ function smw_loop_instructor() {
 }
 
 // 2. Date
-add_action( 'woocommerce_after_shop_loop_item_title', 'smw_loop_date', 6 );
+//add_action( 'woocommerce_after_shop_loop_item_title', 'smw_loop_date', 6 );
 function smw_loop_date() {
     global $product;
 
@@ -523,20 +585,26 @@ function smw_loop_date() {
 
 // 4. Short Description (before price)
 add_action( 'woocommerce_after_shop_loop_item_title', 'smw_loop_short_description', 8 );
-function smw_loop_short_description() {
-    global $post;
 
-    if ( empty( $post ) ) {
+function smw_loop_short_description() {
+    global $product;
+
+    if ( ! $product ) {
         return;
     }
 
-    $short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
+    $short_description = $product->get_short_description();
+
     if ( ! $short_description ) {
         return;
     }
 
-    echo '<p class="smw-loop-short-description">' . wp_kses_post( $short_description ) . '</p>';
+    // Strip HTML and limit words
+    $trimmed_desc = wp_trim_words( wp_strip_all_tags( $short_description ), 18, '...' );
+
+    echo '<p class="smw-loop-short-description">' . esc_html( $trimmed_desc ) . '</p>';
 }
+
 
 // 5. Price (after short description)
 add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 9 );
@@ -1701,3 +1769,309 @@ function smw_display_notification_widget() {
     echo '</ul>';
 }
 
+/**
+ * AJAX: Clear WooCommerce cart (properly)
+ */
+add_action( 'wp_ajax_smw_clear_cart', 'smw_ajax_clear_cart' );
+add_action( 'wp_ajax_nopriv_smw_clear_cart', 'smw_ajax_clear_cart' );
+
+function smw_ajax_clear_cart() {
+
+    if ( ! function_exists( 'WC' ) ) {
+        wp_send_json_error();
+    }
+
+    WC()->cart->empty_cart( true );
+
+    wp_send_json_success();
+}
+add_action( 'wp_footer', function () {
+    ?>
+    <script>
+        window.smwAjaxUrl = "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>";
+    </script>
+    <?php
+});
+
+add_action( 'rest_api_init', function () {
+
+    register_rest_route( 'smw/v1', '/webinar', array(
+        'methods'  => WP_REST_Server::CREATABLE,
+        'callback' => 'smw_rest_create_webinar',
+        'permission_callback' => 'smw_api_auth_check',
+    ) );
+
+});
+
+/**
+ * Token authentication
+ */
+function smw_api_auth_check( WP_REST_Request $request ) {
+
+    $header = $request->get_header( 'authorization' );
+
+    if ( ! $header || stripos( $header, 'Bearer ' ) !== 0 ) {
+        return new WP_Error( 'unauthorized', 'Missing API token', array( 'status' => 401 ) );
+    }
+
+    $token = trim( str_ireplace( 'Bearer', '', $header ) );
+
+    if ( ! defined( 'SMW_API_TOKEN' ) || ! hash_equals( SMW_API_TOKEN, $token ) ) {
+        return new WP_Error( 'forbidden', 'Invalid API token', array( 'status' => 403 ) );
+    }
+
+    return true;
+}
+
+/**
+ * REST callback
+ */
+function smw_rest_create_webinar( WP_REST_Request $request ) {
+
+    $p = $request->get_json_params();
+
+    if ( empty( $p['title'] ) || empty( $p['price'] ) || empty( $p['max_seats'] ) ) {
+        return new WP_Error(
+            'invalid_data',
+            'title, price and max_seats are required',
+            array( 'status' => 400 )
+        );
+    }
+
+    $product_id = smw_create_webinar_product( $p );
+
+    if ( is_wp_error( $product_id ) ) {
+        return $product_id;
+    }
+
+    return array(
+        'success'    => true,
+        'product_id' => $product_id,
+        'view_url'   => get_permalink( $product_id ),
+    );
+}
+
+
+function smw_create_webinar_product( $p ) {
+
+    $price     = floatval( $p['price'] );
+    $max_seats = intval( $p['max_seats'] );
+
+    /* --------------------------------------------------
+     * 1. Create parent product
+     * -------------------------------------------------- */
+    $product_id = wp_insert_post( array(
+        'post_title'   => sanitize_text_field( $p['title'] ),
+        'post_excerpt'=> wp_kses_post( $p['short_description'] ?? '' ),
+        'post_content'=> wp_kses_post( $p['description'] ?? '' ),
+        'post_status' => 'publish',
+        'post_type'   => 'product',
+    ) );
+
+    if ( ! $product_id ) {
+        return new WP_Error( 'create_failed', 'Product creation failed' );
+    }
+
+    /* --------------------------------------------------
+    * Add Product Category (Webinars)
+    * -------------------------------------------------- */
+    if ( ! empty( $p['category'] ) ) {
+
+        $cat_slug = sanitize_title( $p['category'] );
+
+        // Try to get existing term
+        $term = get_term_by( 'slug', $cat_slug, 'product_cat' );
+
+        if ( ! $term ) {
+            $term = wp_insert_term(
+                ucwords( str_replace( '-', ' ', $cat_slug ) ),
+                'product_cat',
+                array( 'slug' => $cat_slug )
+            );
+        }
+
+        // Resolve term ID safely
+        if ( is_array( $term ) && isset( $term['term_id'] ) ) {
+            $term_id = (int) $term['term_id'];
+        } elseif ( is_object( $term ) && isset( $term->term_id ) ) {
+            $term_id = (int) $term->term_id;
+        } else {
+            $term_id = 0;
+        }
+
+        if ( $term_id > 0 ) {
+            wp_set_object_terms( $product_id, array( $term_id ), 'product_cat' );
+        }
+    }
+
+
+
+    /* --------------------------------------------------
+     * 2. Force VARIABLE product
+     * -------------------------------------------------- */
+    wp_set_object_terms( $product_id, 'variable', 'product_type' );
+
+    update_post_meta( $product_id, '_virtual', 'yes' );
+    update_post_meta( $product_id, '_manage_stock', 'no' );
+    update_post_meta( $product_id, 'woo_seat_show', '1' );
+    update_post_meta( $product_id, 'twwt_is_webinar', '1' );
+    update_post_meta( $product_id, 'wooticket_status', 'enabled' );
+
+    if ( ! empty( $p['sku'] ) ) {
+        update_post_meta( $product_id, '_sku', sanitize_text_field( $p['sku'] ) );
+    }
+
+    if ( ! empty( $p['instructor_name'] ) ) {
+        update_post_meta( $product_id, 'instructor_name', sanitize_text_field( $p['instructor_name'] ) );
+    }
+
+    /* --------------------------------------------------
+     * 3. Ensure GLOBAL ATTRIBUTE pa_seat exists
+     * -------------------------------------------------- */
+    if ( ! taxonomy_exists( 'pa_seat' ) ) {
+        wc_create_attribute( array(
+            'name' => 'Seat',
+            'slug' => 'seat',
+            'type' => 'select',
+        ) );
+        register_taxonomy( 'pa_seat', 'product' );
+    }
+
+    if ( ! term_exists( 'Seat', 'pa_seat' ) ) {
+        wp_insert_term( 'Seat', 'pa_seat' );
+    }
+
+    wp_set_object_terms( $product_id, 'seat', 'pa_seat', true );
+
+    update_post_meta( $product_id, '_product_attributes', array(
+        'pa_seat' => array(
+            'name'         => 'pa_seat',
+            'is_visible'   => 0,
+            'is_variation' => 1,
+            'is_taxonomy'  => 1,
+        ),
+    ) );
+
+    update_post_meta( $product_id, '_default_attributes', array(
+        'pa_seat' => 'seat',
+    ) );
+
+    /* --------------------------------------------------
+     * 4. Create variation
+     * -------------------------------------------------- */
+    $variation_id = wp_insert_post( array(
+        'post_title'  => 'Seat',
+        'post_parent' => $product_id,
+        'post_type'   => 'product_variation',
+        'post_status' => 'publish',
+    ) );
+
+    if ( ! $variation_id ) {
+        return new WP_Error( 'variation_fail', 'Variation creation failed' );
+    }
+
+    update_post_meta( $variation_id, 'attribute_pa_seat', 'seat' );
+
+    update_post_meta( $variation_id, '_regular_price', $price );
+    update_post_meta( $variation_id, '_price', $price );
+    update_post_meta( $variation_id, '_virtual', 'yes' );
+
+    update_post_meta( $variation_id, '_manage_stock', 'yes' );
+    update_post_meta( $variation_id, '_stock', $max_seats );
+    update_post_meta( $variation_id, '_stock_status', 'instock' );
+
+    update_post_meta( $variation_id, '_variable_text_field', $max_seats );
+    update_post_meta( $variation_id, 'woo_seat_show', '1' );
+
+    /* --------------------------------------------------
+    * 🔥 FORCE WC VARIATION SAVE (CRITICAL)
+    * -------------------------------------------------- */
+    $variation = new WC_Product_Variation( $variation_id );
+
+    $variation->set_regular_price( $price );
+    $variation->set_price( $price );
+    $variation->set_virtual( true );
+    $variation->set_manage_stock( true );
+    $variation->set_stock_quantity( $max_seats );
+    $variation->set_stock_status( 'instock' );
+
+    // Attribute mapping (THIS is what fixes the Purchase button)
+    $variation->set_attributes( array(
+        'pa_seat' => 'seat',
+    ) );
+
+    // This simulates clicking "Update" in admin
+    $variation->save();
+
+    /* --------------------------------------------------
+    * 5. Image(s) via URL (featured + gallery)
+    * -------------------------------------------------- */
+    if ( ! empty( $p['image_url'] ) ) {
+
+        require_once ABSPATH . 'wp-admin/includes/file.php';
+        require_once ABSPATH . 'wp-admin/includes/media.php';
+        require_once ABSPATH . 'wp-admin/includes/image.php';
+
+        // Allow string OR array
+        $image_urls = is_array( $p['image_url'] )
+            ? $p['image_url']
+            : array( $p['image_url'] );
+
+        $gallery_ids = array();
+
+        foreach ( $image_urls as $index => $image_url ) {
+
+            $tmp = download_url( esc_url_raw( $image_url ), 30 );
+
+            if ( is_wp_error( $tmp ) ) {
+                error_log( '[SMW IMAGE] Download failed: ' . $image_url );
+                continue;
+            }
+
+            $file = array(
+                'name'     => basename( parse_url( $image_url, PHP_URL_PATH ) ),
+                'tmp_name' => $tmp,
+            );
+
+            $attachment_id = media_handle_sideload( $file, $product_id );
+
+            if ( is_wp_error( $attachment_id ) ) {
+                @unlink( $tmp );
+                error_log( '[SMW IMAGE] Attach failed: ' . $image_url );
+                continue;
+            }
+
+            // First image = featured
+            if ( $index === 0 ) {
+                set_post_thumbnail( $product_id, $attachment_id );
+            } else {
+                $gallery_ids[] = $attachment_id;
+            }
+        }
+
+        // Save gallery images
+        if ( ! empty( $gallery_ids ) ) {
+            update_post_meta(
+                $product_id,
+                '_product_image_gallery',
+                implode( ',', $gallery_ids )
+            );
+        }
+    }
+
+
+    /* --------------------------------------------------
+     * 6. FINAL SYNC (critical)
+     * -------------------------------------------------- */
+    delete_post_meta( $product_id, '_wc_product_children' );
+
+    WC_Product_Variable::sync( $product_id );
+
+    if ( function_exists( 'wc_update_product_lookup_tables' ) ) {
+        wc_update_product_lookup_tables( $product_id );
+    }
+
+    wc_delete_product_transients( $product_id );
+
+    return $product_id;
+}

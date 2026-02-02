@@ -1,7 +1,7 @@
 === Newsletter - Send awesome emails from WordPress ===
 Tags: newsletter, subscription, email marketing, welcome email, signup forms
-Tested up to: 6.8.3
-Stable tag: 9.0.7
+Tested up to: 6.9
+Stable tag: 9.1.1
 Contributors: satollo,webagile
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -128,6 +128,30 @@ Thank you, The Newsletter Team
 3. The Reports addon
 
 == Changelog ==
+
+= 9.1.1 =
+
+* Fixed buttons width on composer blocks
+* Added check on registered schedules to show possible wrong interval settings
+* Fixed vulnerability (CVE-2026-1051)
+
+= 9.1.0 =
+
+* Added configurable fallback for tags name and full_name when empty
+* Security fix on maintenance actions (with logging in user and enabled to use the plugin)
+
+= 9.0.9 =
+
+* Added check and fix for newsletter job scheduiled on the "far future"
+* Fixed "saved" message on custom profile pages
+* Added aria-label to the minimal widget
+* Improved email error check on sending loop
+* Fixed the composer backgrounds when selecting a template
+
+= 9.0.8 =
+
+* Fixed PHP warning
+* Fixed heading block with HTML filters removing tabel attributes
 
 = 9.0.7 =
 

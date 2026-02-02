@@ -40,7 +40,10 @@ class NewsletterWidgetMinimal extends WP_Widget {
         // Referrer
         $form .= '<input type="hidden" name="nr" value="widget-minimal"/>';
 
-        $form .= '<input class="tnp-email" type="email" required name="ne" value="" placeholder="' . esc_attr(NewsletterSubscription::instance()->get_form_option('email')) . '">';
+        $form .= '<input class="tnp-email" type="email" required name="ne" value="" placeholder="'
+                . esc_attr(NewsletterSubscription::instance()->get_form_option('email')) . '"'
+                . ' aria-label="' . esc_attr(NewsletterSubscription::instance()->get_form_option('email')) . '"'
+                . '>';
 
         $form .= '<input class="tnp-submit" type="submit" value="' . esc_attr($instance['button']) . '">';
 

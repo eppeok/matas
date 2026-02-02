@@ -221,9 +221,7 @@ include __DIR__ . '/modals/subjects.php';
 include __DIR__ . '/modals/placeholders.php';
 include __DIR__ . '/modals/templates.php';
 
-if (function_exists('wp_enqueue_editor')) {
-    wp_enqueue_editor();
-}
+wp_enqueue_editor();
 
 do_action('newsletter_composer_footer');
 

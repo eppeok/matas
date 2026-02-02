@@ -248,6 +248,20 @@ $main_options = $this->get_main_options('form');
                         <?php esc_html_e('Salutation titles are inserted in emails message when the tag {title} is used. For example "Good morning {title} {surname} {name}".', 'newsletter') ?>
                     </p>
 
+                    <h3><?php esc_html_e('Other', 'newsletter') ?></h3>
+
+                    <table class="form-table">
+                        <tr>
+                            <th>Fall back for empty name</th>
+
+                            <td>
+                                <?php $controls->text('name_default', 30); ?>
+                                <p class="description">Used when <code>{name}</code> or <code>{full_name}</code> tags are empty.</p>
+                            </td>
+                        </tr>
+
+
+                    </table>
                 </div>
 
                 <div id="tabs-lists">

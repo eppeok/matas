@@ -8,7 +8,7 @@ if ( $product->is_purchasable() ) {
 		$login_check = smw_woo_login_check();
 		if($login_check['status']){
 			?>
-            <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" class="button alt"><?php echo $login_check['text'];?></a>
+            <a href="<?php echo esc_url( $login_check['login_url'] ); ?>" class="button alt"><?php echo $login_check['text'];?></a>
             <?php
 		}
 		else{
@@ -62,7 +62,6 @@ if ( $product->is_purchasable() ) {
                     <div class="smw-left-desc">
                         <p><?php echo wp_kses_post($product->get_short_description()); ?></p>
                         <p><strong>Instructor:</strong> <?php the_field('instructor_name'); ?></p>
-                        <p><strong>Date:</strong> <?php the_field('start_date'); ?></p>
                     </div>
                 </div>
             </div>
@@ -138,9 +137,29 @@ if ( $product->is_purchasable() ) {
                     if ( isset( $options['randomGenerator_restrict'] ) && $options['randomGenerator_restrict'] == 1 ) {
                         echo '<div class="randomGenerator" id="randomGenerator">';
                         echo '<button id="generate-random">Random Seat Generator</button></div>';
+                        /*echo '<div class="randomGenerator" id="randomGenerator">';
+
+                        echo '<div class="random-seat-controls">';
+                        echo '<label for="random-seat-count">Number of Random Seats:</label>';
+                        echo '<input type="number" id="random-seat-count" value="1" min="1" step="1">';
+                        echo '</div>';
+
+                        echo '<button id="generate-random" class="button alt">Select Random Seats</button>';
+
+                        echo '</div>';*/
                         ?>
                         <style>
                             .prc-qty { display:none; }
+                            /*.random-seat-controls {
+                                margin-bottom: 12px;
+                            }
+
+                            #random-seat-count {
+                                width: 70px;
+                                padding: 6px;
+                                font-size: 16px;
+                                text-align: center;
+                            }*/
                         </style>
                         <?php
                     }

@@ -122,6 +122,11 @@ class TNP_Composer {
             $prefix . '_width' => 'auto'
         ];
 
+        $width = $options[$prefix . '_width'];
+        if (is_numeric($width)) {
+            $width .= 'px';
+        }
+
         $options = array_merge($defaults, array_filter($options));
 
         $a_style = 'display:inline-block;'
@@ -133,9 +138,9 @@ class TNP_Composer {
 
         $td_style = 'border-collapse:separate !important;cursor:auto;mso-padding-alt:10px 25px;background:' . $options[$prefix . '_background'] . ';';
         $td_style .= 'border-radius:' . $options[$prefix . '_border_radius'] . 'px;';
-        if (!empty($options[$prefix . '_width'])) {
-            $a_style .= ' width:' . $options[$prefix . '_width'] . 'px;';
-            $table_style .= 'width:' . $options[$prefix . '_width'] . 'px;';
+        if ($width) {
+            $a_style .= ' width:' . $width . ';';
+            $table_style .= 'width:' . $width . ';';
         }
 
         if (!empty($options[$prefix . '_border_color'])) {

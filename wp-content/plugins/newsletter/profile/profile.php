@@ -455,12 +455,23 @@ class NewsletterProfile extends NewsletterModule {
             $buffer .= '<input class="tnp-submit" type="submit" value="' . esc_attr($this->get_text('save_label')) . '">';
             $buffer .= "</div>\n";
             $buffer .= "</form>\n</div>\n";
+
+            if (isset($_REQUEST['alert'])) {
+                // slashes are already added by wordpress!
+                $buffer .= '<script>alert("' . esc_js(strip_tags($_REQUEST['alert'])) . '");</script>';
+            }
+
             $this->restore_language();
 
             return $buffer;
         }
 
-        return $this->get_profile_form($user);
+        $buffer = $this->get_profile_form($user);
+        if (isset($_REQUEST['alert'])) {
+            // slashes are already added by wordpress!
+            $buffer .= '<script>alert("' . esc_js(strip_tags($_REQUEST['alert'])) . '");</script>';
+        }
+        return $buffer;
     }
 
     /**

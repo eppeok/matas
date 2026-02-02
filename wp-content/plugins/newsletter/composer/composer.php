@@ -596,7 +596,9 @@ class NewsletterComposer extends NewsletterModule {
         // This code filters the HTML to remove javascript and unsecure attributes and enable the
         // "display" rule for CSS which is needed in blocks to force specific "block" or "inline" or "table".
         add_filter('safe_style_css', [$this, 'hook_safe_style_css'], 9999);
-        $options = wp_kses_post_deep($options);
+        //if (!Newsletter::instance()->is_html_allowed()) {
+            $options = wp_kses_post_deep($options);
+        //}
         remove_filter('safe_style_css', [$this, 'hook_safe_style_css']);
 
         if (!isset($context['type'])) {

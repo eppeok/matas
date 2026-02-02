@@ -14,7 +14,7 @@ header('Cache-Control: no-cache,no-store,private');
                 margin: 200px auto 0 auto !important;
                 max-width: 300px !important;
                 padding: 10px !important;
-                font-family: "Open Sans", sans-serif;
+                font-family: sans-serif;
                 background: #ECF0F1;
                 border-radius: 5px;
                 padding: 50px !important;

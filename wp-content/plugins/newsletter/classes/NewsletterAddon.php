@@ -28,8 +28,6 @@ class NewsletterAddon {
             }
         }
         add_action('newsletter_init', [$this, 'init']);
-        //Load translations from specific addon /languages/ directory
-        load_plugin_textdomain('newsletter-' . $this->name, false, 'newsletter-' . $this->name . '/languages/');
 
         if ($this->weekly_check && is_admin() && !wp_next_scheduled('newsletter_addon_' . $this->name)) {
             wp_schedule_event(time() + HOUR_IN_SECONDS, 'weekly', 'newsletter_addon_' . $this->name);
@@ -57,6 +55,8 @@ class NewsletterAddon {
      * fires the <code>newsletter_init</code> event.
      */
     function init() {
+        //Load translations from specific addon /languages/ directory
+        load_plugin_textdomain('newsletter-' . $this->name, false, 'newsletter-' . $this->name . '/languages/');
         if (is_admin()) {
             if ($this->is_allowed()) {
                 add_action('admin_menu', [$this, 'admin_menu'], $this->menu_priority);

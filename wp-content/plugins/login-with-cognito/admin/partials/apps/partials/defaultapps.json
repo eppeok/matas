@@ -1,0 +1,11 @@
+{
+	"cognito": {
+		"label":"AWS Cognito", "type":"oauth", "image":"cognito.png", "scope": "openid", "authorize": "https://<cognito-app-domain>/oauth2/authorize", "token": "https://<cognito-app-domain>/oauth2/token", "userinfo": "https://<cognito-app-domain>/oauth2/userInfo", "guide":"https://plugins.miniorange.com/sso-wordpress-using-aws-cognito-openid-connect-protocol/", "logo_class":"fa fa-amazon","send_header":"1", "send_body":"0"
+	},
+	"other": {
+		"label":"Custom OAuth 2.0 App", "type":"oauth", "image":"customapp.png", "scope": "", "authorize": "", "token": "", "userinfo": "", "guide":"", "logo_class":"fa fa-lock","send_header":"1", "send_body":"0"
+	},
+	"openidconnect": {
+		"label":"Custom OpenID Connect App", "type":"openidconnect", "image":"customapp.png", "scope": "", "authorize": "", "token": "", "userinfo": "", "guide":"", "logo_class":"fa fa-lock","send_header":"1", "send_body":"0"
+	}
+}

@@ -797,10 +797,8 @@ class NewsletterModule extends NewsletterModuleBase {
 
         $name = $this->sanitize_name($user->name);
         if (empty($name)) {
-            $text = str_replace(' {name}', '', $text);
-            $text = str_replace('{name}', '', $text);
-            $text = str_replace(' {first_name}', '', $text);
-            $text = str_replace('{first_name}', '', $text);
+            $text = str_replace('{name}', esc_html($this->get_text('name_default', 'form')), $text);
+            $text = str_replace('{first_name}', esc_html($this->get_text('name_default', 'form')), $text);
         } else {
             $text = str_replace('{name}', esc_html($name), $text);
             $text = str_replace('{first_name}', esc_html($name), $text);
@@ -812,8 +810,7 @@ class NewsletterModule extends NewsletterModuleBase {
 
         $full_name = trim($name . ' ' . $surname);
         if (empty($full_name)) {
-            $text = str_replace(' {full_name}', '', $text);
-            $text = str_replace('{full_name}', '', $text);
+            $text = str_replace('{full_name}', esc_html($this->get_text('name_default', 'form')), $text);
         } else {
             $text = str_replace('{full_name}', esc_html($full_name), $text);
         }
@@ -948,10 +945,11 @@ class NewsletterModule extends NewsletterModuleBase {
             $name = $this->sanitize_user_field($name);
 
             if (empty($name)) {
-                $text = str_replace(' {name}', '', $text);
-                $text = str_replace('{name}', '', $text);
+                $text = str_replace('{name}', esc_html($this->get_text('name_default', 'form')), $text);
+                $text = str_replace('{first_name}', esc_html($this->get_text('name_default', 'form')), $text);
             } else {
                 $text = str_replace('{name}', esc_html($name), $text);
+                $text = str_replace('{first_name}', esc_html($name), $text);
             }
 
             switch ($user->sex) {
@@ -969,8 +967,7 @@ class NewsletterModule extends NewsletterModuleBase {
 
             $full_name = esc_html(trim($name . ' ' . $surname));
             if (empty($full_name)) {
-                $text = str_replace(' {full_name}', '', $text);
-                $text = str_replace('{full_name}', '', $text);
+                $text = str_replace('{full_name}', esc_html($this->get_text('name_default', 'form')), $text);
             } else {
                 $text = str_replace('{full_name}', $full_name, $text);
             }

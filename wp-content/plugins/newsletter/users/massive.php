@@ -68,12 +68,12 @@ if ($controls->is_action('language')) {
 if ($controls->is_action('list_manage')) {
     if ($controls->data['list_action'] == 'move') {
         $wpdb->query("update " . NEWSLETTER_USERS_TABLE . ' set list_' . ((int) $controls->data['list_1']) . '=0, list_' . ((int) $controls->data['list_2']) . '=1' .
-                ' where list_' . $controls->data['list_1'] . '=1');
+                ' where list_' . ((int) $controls->data['list_1']) . '=1');
     }
 
     if ($controls->data['list_action'] == 'add') {
         $wpdb->query("update " . NEWSLETTER_USERS_TABLE . ' set list_' . ((int) $controls->data['list_2']) . '=1' .
-                ' where list_' . $controls->data['list_1'] . '=1');
+                ' where list_' . ((int) $controls->data['list_1']) . '=1');
     }
 }
 

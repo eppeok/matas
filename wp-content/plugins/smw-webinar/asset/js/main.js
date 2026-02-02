@@ -1,3 +1,91 @@
+var smwGlobalTimerInterval = null;
+var smwCartExpiryHandled = false;
+/******************************************************************
+ * GLOBAL HEADER TIMER (ALL PAGES)
+ ******************************************************************/
+function getAnyActiveExpiry() {
+  for (let i = 0; i < sessionStorage.length; i++) {
+    const key = sessionStorage.key(i);
+    if (key && key.indexOf('seat_expiry_') === 0) {
+      try {
+        const data = JSON.parse(sessionStorage.getItem(key));
+        if (data && data.expiry && data.expiry > (Date.now() / 1000)) {
+          return data.expiry;
+        }
+      } catch (e) {}
+    }
+  }
+  return null;
+}
+
+/******************************************************************
+ * GLOBAL TIMER RESET
+ ******************************************************************/
+function resetGlobalHeaderTimer() {
+  const $timer = jQuery('#smw-global-seat-timer');
+
+  if (smwGlobalTimerInterval) {
+    clearInterval(smwGlobalTimerInterval);
+    smwGlobalTimerInterval = null;
+  }
+
+  if ($timer.length) {
+    $timer.hide().html('');
+  }
+
+  // Clear all seat-related sessionStorage
+  Object.keys(sessionStorage).forEach(function (key) {
+    if (key.indexOf('seat_expiry_') === 0 || key.indexOf('seat_hold_') === 0) {
+      sessionStorage.removeItem(key);
+    }
+  });
+}
+
+function startGlobalHeaderTimer() {
+  const expiryTs = getAnyActiveExpiry();
+  const $timer = jQuery('#smw-global-seat-timer');
+
+  // If no active expiry → stop & hide
+  if (!expiryTs || !$timer.length) {
+    if (smwGlobalTimerInterval) {
+      clearInterval(smwGlobalTimerInterval);
+      smwGlobalTimerInterval = null;
+    }
+    $timer.hide().html('');
+    return;
+  }
+
+  // Prevent multiple intervals
+  if (smwGlobalTimerInterval) {
+    clearInterval(smwGlobalTimerInterval);
+  }
+
+  $timer.show();
+
+  smwGlobalTimerInterval = setInterval(function () {
+    const remain = (expiryTs * 1000) - Date.now();
+
+    if (remain <= 0) {
+      clearInterval(smwGlobalTimerInterval);
+      smwGlobalTimerInterval = null;
+      $timer.hide().html('');
+      return;
+    }
+
+    const mins = Math.floor(remain / 60000);
+    const secs = Math.floor((remain % 60000) / 1000);
+
+    $timer.html(
+      '🕒 <strong>' +
+        mins +
+        ':' +
+        (secs < 10 ? '0' : '') +
+        secs +
+        '</strong> till cart is reset'
+    );
+  }, 1000);
+}
+
 (function ($) {
   "use strict";
 
@@ -41,17 +129,33 @@
           '<ins>' + minutes + ' minutes ' + (seconds < 10 ? '0' : '') + seconds + ' seconds</ins> only.'
         );
       } else {
+        if (smwCartExpiryHandled) return;
+        smwCartExpiryHandled = true;
+
         clearInterval(timer);
-        $ele.text('Your seat reservation expired.');
+
+        // Remove notice completely (not just text)
+        $ele.closest('.woocommerce-error, .woocommerce-message').remove();
+        $ele.remove();
         if (typeof onExpire === 'function') onExpire();
         // Clear WooCommerce cart via AJAX, then reload
             jQuery.post(
-                wc_add_to_cart_params.ajax_url, // WC AJAX endpoint
-                { action: 'woocommerce_clear_cart' },
-                function () {
-                    setTimeout(function () { location.reload(); }, 1500); // reload after 1.5s
-                }
+              window.smwAjaxUrl,
+              { action: 'smw_clear_cart' },
+              function () {
+
+                // Sync WooCommerce UI
+                jQuery(document.body).trigger('wc_cart_emptied');
+                jQuery(document.body).trigger('updated_wc_div');
+
+                // Stop & reset global timer
+                resetGlobalHeaderTimer();
+
+                window.location.href = window.location.href;
+
+              }
             );
+
         }
     }
 
@@ -88,6 +192,18 @@
    ******************************************************************/
   $(function () {
 
+    startGlobalHeaderTimer();
+
+    /******************************************************************
+   * STOP HEADER TIMER WHEN CART IS CLEARED
+   ******************************************************************/
+    jQuery(document.body).on(
+      'removed_from_cart wc_cart_emptied updated_wc_div',
+      function () {
+        resetGlobalHeaderTimer();
+      }
+    );
+
     /********************
      * Cart Page Notice
      ********************/
@@ -123,7 +239,7 @@
     /********************
      * Random Generator (original)
      ********************/
-    function getMultipleRandom(arr, num) {
+   function getMultipleRandom(arr, num) {
       const shuffled = [...arr].sort(() => 0.5 - Math.random());
       return shuffled.slice(0, num);
     }
@@ -152,6 +268,72 @@ $("#generate-random").on("click", function (e) {
   var randIndex = Math.floor(Math.random() * $available.length);
   $($available[randIndex]).trigger("click");
 });
+
+    /********************
+     * MULTI RANDOM SEAT GENERATOR (Number Input Version)
+     ********************/
+
+    /*function getAvailableSeats() {
+        return jQuery(".my-tickets input[type=checkbox]")
+            .not(".rbtn-tt-perma")
+            .not(".rbtn-tt-temp")
+            .not(".wait")
+            .not(":checked");
+    }
+
+    function validateSeatInput() {
+        let availableCount = getAvailableSeats().length;
+        let $input = jQuery("#random-seat-count");
+        let val = parseInt($input.val());
+
+        if (isNaN(val) || val < 1) val = 1;
+        if (val > availableCount) val = availableCount;
+
+        $input.attr("max", availableCount);
+        $input.val(val);
+    }
+
+    // When user manually types number
+    jQuery(document).on("input", "#random-seat-count", function(){
+        validateSeatInput();
+    });
+
+    // Main random button
+    jQuery(document).on("click", "#generate-random", function(e){
+        e.preventDefault();
+
+        validateSeatInput();
+
+        let seatCount = parseInt(jQuery("#random-seat-count").val());
+        let $available = getAvailableSeats();
+
+        if ($available.length === 0) {
+            alert("No available seats left.");
+            return;
+        }
+
+        // Clear previously selected seats
+        jQuery(".ticket-box:checked")
+            .prop("checked", false)
+            .trigger("change");
+
+        // Shuffle and select seats
+        let shuffled = $available.sort(() => 0.5 - Math.random()).slice(0, seatCount);
+
+        shuffled.each(function(){
+            jQuery(this).trigger("click");
+        });
+    });
+
+    // Update limits when seat availability changes
+    jQuery(document).on("change", ".ticket-box", function(){
+        validateSeatInput();
+    });
+
+    // When modal opens
+    jQuery(document).on("click", "#smw-open-seat-modal", function(){
+        setTimeout(validateSeatInput, 300);
+    });*/
 
     /********************
      * Seat Selection (modified: uses sessionStorage)
@@ -202,29 +384,24 @@ $("#generate-random").on("click", function (e) {
 
             // Also auto-clear after 5 minutes (for PDP)
             setTimeout(function () {
-              // Clear only if the same hold still exists (no new seat was selected)
-              var current = ssGet(keyHold(vid));
-              if (current && current.expiry === expiryTs) {
-                ssRemove(keyHold(vid));
-                ssRemove(keyExpiry(vid));
-                // Reset UI on the PDP
-                $('ul.my-tickets').removeClass('de-active');
-                $(".proceed-cart").hide();
-                $(".proceed-cart-info").show();
-                // uncheck this seat visually
-                $ele.prop('checked', false);
-                $(".smw_woo_cc_notice[data-id='" + vid + "']").text('Your seat reservation expired.');
-                   jQuery.post(
-                        wc_add_to_cart_params.ajax_url,
-                        { action: 'woocommerce_clear_cart' },
-                        function () {
-                            setTimeout(function () {
-                                location.reload();
-                            }, 1500);
-                        }
-                    );
 
-              }
+              // Only clear UI + storage — NOT cart
+              var current = ssGet(keyHold(vid));
+              if (!current || current.expiry !== expiryTs) return;
+
+              ssRemove(keyHold(vid));
+              ssRemove(keyExpiry(vid));
+
+              // Reset UI on PDP only
+              $('ul.my-tickets').removeClass('de-active');
+              $(".proceed-cart").hide();
+              $(".proceed-cart-info").show();
+              $ele.prop('checked', false);
+
+              // Notice text only (no cart logic here)
+              $(".smw_woo_cc_notice[data-id='" + vid + "']")
+                .text('Your seat reservation expired.');
+
             }, HOLD_MS);
 
             as_reset($ele);
@@ -340,3 +517,22 @@ $("#generate-random").on("click", function (e) {
   }); // ready
 
 })(jQuery);
+/******************************************************************
+ * RELEASE SESSION HOLDS WHEN CART ITEM IS REMOVED
+ ******************************************************************/
+jQuery(function ($) {
+
+  function clearAllSeatHolds() {
+    Object.keys(sessionStorage).forEach(function (key) {
+      if (key.indexOf('seat_hold_') === 0 || key.indexOf('seat_expiry_') === 0) {
+        sessionStorage.removeItem(key);
+      }
+    });
+  }
+
+  // Fired when cart item is removed via AJAX
+  $(document.body).on('removed_from_cart wc_cart_emptied updated_wc_div', function () {
+    clearAllSeatHolds();
+  });
+
+});

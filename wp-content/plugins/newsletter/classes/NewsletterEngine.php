@@ -93,7 +93,7 @@ class NewsletterEngine {
         $this->send_setup();
 
         if ($this->max_emails <= 0) {
-            $this->logger->info('No more capacity');
+            $this->logger->error('No more capacity');
             return false;
         }
 
@@ -159,7 +159,7 @@ class NewsletterEngine {
 
         $this->logger->debug(count($chunks) . ' chunks to process');
 
-        foreach ($chunks as $index=>$chunk) {
+        foreach ($chunks as $index => $chunk) {
 
             $this->logger->debug('Processing chunk #' . $index);
 
@@ -171,11 +171,18 @@ class NewsletterEngine {
                 $this->logger->debug('Processing user # ' . $user->id);
 
                 $user = apply_filters('newsletter_send_user', $user);
+                $message = $this->build_message($email, $user);
+
                 if (!NewsletterModuleBase::is_email($user->email)) {
                     $this->logger->error('Subscriber ' . $user->id . ' with invalid email');
+                    $message->error = 'Invalid email, skipped';
+                    $this->save_sent_message($message);
+                    if (!$test) {
+                        $wpdb->query("update " . NEWSLETTER_EMAILS_TABLE . " set sent=sent+1, last_id=" . $user->id . " where id=" . $email->id . " limit 1");
+                    }
                     continue;
                 }
-                $message = $this->build_message($email, $user);
+
                 $this->save_sent_message($message);
                 $messages[] = $message;
 
@@ -212,6 +219,7 @@ class NewsletterEngine {
             }
 
             if (!$supplied_users && !$test && $this->time_exceeded()) {
+                $this->logger->error('Time excedeed');
                 $result = false;
                 break;
             }

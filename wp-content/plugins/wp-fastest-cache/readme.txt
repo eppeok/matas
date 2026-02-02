@@ -3,8 +3,8 @@ Contributors: emrevona
 Donate link: https://profiles.wordpress.org/emrevona/
 Tags: cache, Optimize, performance, PageSpeed, core web vitals
 Requires at least: 5.3
-Tested up to: 6.8
-Stable tag: 1.4.1
+Tested up to: 6.9
+Stable tag: 1.4.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,9 +67,9 @@ The free version is enough to speed up your site but in the premium version ther
 5. Minify Javascript - Minifying JavaScript files can reduce payload sizes and script parse time
 6. Combine JS Plus
 7. Defer Javascript - Eliminate render-blocking JavaScript resources. Consider delivering critical JS inline and deferring all non-critical JS
-8. Optimize Images - Optimized images load faster and consume less cellular data
-9. Convert WebP - Serve images in next-gen formats. Image formats like JPEG 2000, JPEG XR, and WebP often provide better compression than PNG or JPEG, which means faster downloads and less data consumption
-10. Database Cleanup - The Database Cleanup feature clears out all of the garbage datas such as post revisions, trashed posts & pages, comments from trash & spam, trackbacks and pingbacks, transient options, orphaned post meta, comment meta, user meta, term meta, and term relationship etc.
+8. Optimize Images - Optimized images load faster and consume less cellular data. Looking for an easy image compressor? Our tool lets you compress images instantly, including Compress JPEG and Compress PNG options. Enjoy fast image compression to reduce image size without losing quality. Perfect for quick image optimization with a smart image optimizer designed for all your needs.
+9. Convert WebP - Serve images in next-gen formats. Image formats like JPEG 2000, JPEG XR, and WebP often provide better compression than PNG or JPEG, which means faster downloads and less data consumption. A fast and reliable WebP converter helps you convert to WebP in seconds. Whether you need a WebP convert tool, a JPG to WEBP Converter, PNG to WEBP Converter, or a simple image to WebP option, you can easily optimize your images. Quickly handle JPG to WEBP, PNG to WEBP, jpg convert to webp, and png convert to webp tasks to reduce file size and improve web performance.
+10. Database Cleanup - To keep your system running smoothly, it’s important to clean database structures regularly and ensure you clean DB records that are no longer needed. A database cleaner is essential for effective database cleaning and long-term database optimization. By removing unused entries and organizing data efficiently, you can significantly improve database performance and speed up database operations. Modern db cleaner tools automate the entire db cleaning process, helping developers maintain fast, reliable, and scalable systems. The Database Cleanup feature clears out all of the garbage datas such as post revisions, trashed posts & pages, comments from trash & spam, trackbacks and pingbacks, transient options, orphaned post meta, comment meta, user meta, term meta, and term relationship etc.
 11. Google Fonts Async
 12. Lazy Load - Defer offscreen images. Consider lazy-loading offscreen and hidden images after all critical resources have finished loading to lower time to interactive
 12. Delay JS - The Delay JavaScript feature helps reduce the 'Reduce unused JavaScript' warning in the Google PageSpeed Insights tool
@@ -118,6 +118,16 @@ Chinese Simplified (China), Chinese Traditional (Taiwan), Czech, Dutch (Belgium)
 
 == Changelog ==
 
+= 1.4.4 =
+* Updated caching behavior to serve URLs with Google Ads Click & Conversion Parameters query strings (e.g., /?gbraid) from the cache, improving performance
+
+= 1.4.3 =
+* Tested and confirmed full compatibility with WordPress 6.9 to ensure smooth and reliable plugin performance
+
+= 1.4.2 =
+* <strong>[Improvement]</strong> Updated the function modifying for url() paths in CSS
+* <strong>[Improvement]</strong> Enhanced the &lt;pre&gt; tag replacement logic for more accurate matching and reliable content updates
+
 = 1.4.1 =
 * Added display of orphaned post meta, comment meta, user meta, term meta, and term relationship counts 
 * Added nonce verification and capability checks to the wpfc_db_fix AJAX action to prevent unauthorized database cleanup requests
@@ -127,11 +137,11 @@ Chinese Simplified (China), Chinese Traditional (Taiwan), Czech, Dutch (Belgium)
 * Fixed: support both old (elementor_experiment-e_element_cache) and new (elementor_element_cache_ttl) Elementor cache options for compatibility
 
 = 1.3.9 =
-* <strong>[Improvement]</strong> Replaced manual <script> output in print_my_inline_script() with wp_print_inline_script_tag() for better compatibility and cleaner code
+* <strong>[Improvement]</strong> Replaced manual &lt;script&gt; output in print_my_inline_script() with wp_print_inline_script_tag() for better compatibility and cleaner code
 * Fixed: RewriteCond syntax to correctly detect HTTPS connections
 
 = 1.3.8 =
-* Added a condition to exclude <script type="module"> tags from js combining 
+* Added a condition to exclude &lt;script type=&quot;module&quot;&gt; tags from js combining 
 * Fixed: Issue where the cache was not being cleared when a page was deleted
 * Fixed: PHP fatal error caused by an undefined function current_datetime() in cache.php on line 1130
 * Added support for fetching and processing multiple pages of Cloudflare zones to ensure all potential matches are considered
@@ -203,7 +213,7 @@ Chinese Simplified (China), Chinese Traditional (Taiwan), Czech, Dutch (Belgium)
 * refactoring for getABSPATH()
 * to fix PHP Deprecated:  Creation of dynamic property CssUtilities::$url is deprecated in css-utilities.php on line 348
 * to fix PHP Deprecated:  Creation of dynamic property CssUtilities::$url_for_fix is deprecated in css-utilities.php on line 412
-* to remove duplicate extensions in the <FilesMatch> directive for the browser caching feature
+* to remove duplicate extensions in the &lt;FilesMatch&gt; directive for the browser caching feature
 
 = 1.2.3 =
 * Farewell, StackPath, and a warm welcome to BunnyCDN

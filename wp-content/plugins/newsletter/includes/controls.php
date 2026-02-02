@@ -1038,7 +1038,7 @@ class NewsletterControls {
     }
 
     function hidden_encoded($name) {
-        $value = $this->get_value($name);
+        $value = $this->get_value($name, '');
         $value = base64_encode(rawurlencode($value));
         echo '<input name="options[', esc_attr($name), ']" id="options-', esc_attr($name), '" type="hidden" value="', esc_attr($value), '">';
         echo '<input type="hidden" name="tnp_fields[', esc_attr($name), ']" value="encoded">';
