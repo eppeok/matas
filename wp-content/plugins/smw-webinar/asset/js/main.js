@@ -41,7 +41,7 @@ function resetGlobalHeaderTimer() {
   });
 }
 
-function startGlobalHeaderTimer() {
+/*function startGlobalHeaderTimer() {
   const expiryTs = getAnyActiveExpiry();
   const $timer = jQuery('#smw-global-seat-timer');
 
@@ -60,6 +60,65 @@ function startGlobalHeaderTimer() {
     clearInterval(smwGlobalTimerInterval);
   }
 
+  $timer.show();
+
+  smwGlobalTimerInterval = setInterval(function () {
+    const remain = (expiryTs * 1000) - Date.now();
+
+    if (remain <= 0) {
+      clearInterval(smwGlobalTimerInterval);
+      smwGlobalTimerInterval = null;
+      $timer.hide().html('');
+      return;
+    }
+
+    const mins = Math.floor(remain / 60000);
+    const secs = Math.floor((remain % 60000) / 1000);
+
+    $timer.html(
+      '🕒 <strong>' +
+        mins +
+        ':' +
+        (secs < 10 ? '0' : '') +
+        secs +
+        '</strong> till cart is reset'
+    );
+  }, 1000);
+}*/
+
+function startGlobalHeaderTimer() {
+  const $timer = jQuery('#smw-global-seat-timer');
+
+  // 🔒 HARD STOP: if header timer container does not exist, do nothing
+  // (this is what prevents Back / Close leaks)
+  if (!$timer.length) {
+    if (typeof smwGlobalTimerInterval !== 'undefined' && smwGlobalTimerInterval) {
+      clearInterval(smwGlobalTimerInterval);
+      smwGlobalTimerInterval = null;
+    }
+    return;
+  }
+
+  const expiryTs = getAnyActiveExpiry();
+
+  // 🚫 No active seat expiry → hide timer
+  if (!expiryTs) {
+    if (smwGlobalTimerInterval) {
+      clearInterval(smwGlobalTimerInterval);
+      smwGlobalTimerInterval = null;
+    }
+    $timer.hide().html('');
+    return;
+  }
+
+  // 🛑 Prevent multiple intervals
+  if (smwGlobalTimerInterval) {
+    clearInterval(smwGlobalTimerInterval);
+  }
+
+  // At this point:
+  // - Header allows timer
+  // - Seat expiry exists
   $timer.show();
 
   smwGlobalTimerInterval = setInterval(function () {

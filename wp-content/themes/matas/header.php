@@ -22,7 +22,8 @@
                 <div class="announcement-bar">
                     <span><?php the_field('top_banner_text', $frontpage_id  ); ?></span>
                 </div>
-                <div id="smw-global-seat-timer" class="webanounce container" style="display:none;"></div>
+                <!--<div id="smw-global-seat-timer" class="webanounce container" style="display:none;"></div>-->
+                <?php echo do_shortcode('[smw_cart_timer]'); ?>
                 <div class="main_header">
                     <div class="container">
                         <nav class="navbar navbar-expand-lg navbar-custom px-4">

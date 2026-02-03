@@ -140,26 +140,16 @@ if ( $product->is_purchasable() ) {
                         echo '<div class="randomGenerator" id="randomGenerator">';
 
                         echo '<div class="random-seat-controls">';
-                        //echo '<label for="random-seat-count">Number of Random Seats:</label>';
-                        echo '<input type="number" class="input-text" id="random-seat-count" placeholder="Random Seat Quantity" min="1" max="40">';
+                        echo '<label for="random-seat-count">Number of Random Seats:</label>';
+                        echo '<input type="number" class="input-text" id="random-seat-count" min="1" max="100">';
                         echo '</div>';
 
-                        echo '<button id="generate-random" class="button alt">Select Random Seats</button>';
+                        echo '<button id="generate-random" class="button alt">Generate</button>';
 
                         echo '</div>';
                         ?>
                         <style>
                             .prc-qty { display:none; }
-                            /*.random-seat-controls {
-                                margin-bottom: 12px;
-                            }
-
-                            #random-seat-count {
-                                width: 70px;
-                                padding: 6px;
-                                font-size: 16px;
-                                text-align: center;
-                            }*/
                         </style>
                         <?php
                     }

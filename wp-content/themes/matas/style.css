@@ -36,3 +36,73 @@ Version: 2.1
     font-size: 18px !important;
     font-weight: 400 !important;
 }
+
+.woocommerce-variation-add-to-cart-enabled a.button.alt {
+    text-align: center;
+}
+.home form.wpcf7-form.init input,
+.home form.wpcf7-form.init textarea,
+input.wpcf7-form-control.wpcf7-email.wpcf7-validates-as-required.wpcf7-text.wpcf7-validates-as-email.wpcf7-not-valid,
+.submitting input.wpcf7-form-control.wpcf7-email.wpcf7-validates-as-required.wpcf7-text.wpcf7-validates-as-email.wpcf7-not-valid,
+.wpcf7-form-control.wpcf7-email.wpcf7-validates-as-required.wpcf7-text.wpcf7-validates-as-email,
+textarea.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required.wpcf7-not-valid,
+.wpcf7-form-control.wpcf7-textarea.wpcf7-validates-as-required{
+    margin-block: 10px !important;
+    padding: 10px !important;
+    width: 100% !important;
+    border-radius: 3px !important;
+    border: 1px solid #959191 !important;
+}
+.wpcf7-spinner {
+    top: 7px;
+}
+.pum-content.popmake-content input[type="submit"] {
+    color: #fff;
+    background: #1D293D;
+    width: auto;
+    padding: 10px 30px;
+}
+.pum-content.popmake-content h2{
+    margin-top: 0;
+    color: #1D293D !important;
+    font-weight: 600;
+    font-size: 40px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.pum-theme-437, .pum-theme-default-theme {
+    background: linear-gradient(90deg, rgba(248, 250, 252, 1) 0%, rgba(241, 245, 249, 1) 100%);
+}
+p.list-ticket-avialble {
+    height: 30px;
+}
+.filterSec {
+    background-color: var(--themeBlue)!important;
+    border-radius: 4px;
+    padding: 0.75rem;
+}
+.price_label {
+    color: #fff;
+}
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range {
+    background-color:#fff;
+}
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+    background-color: #fff;
+}
+section#wc_filter_by_remaining_slider-2 h4 {
+    margin-block: 20px;
+}
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
+    border-radius: 1em;
+    background-color: #0d6efd !important;
+    border: 0;
+}
+@media (max-width:767px){
+	.pum-content.popmake-content h2{
+    font-size: 30px;
+}
+	.woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before{
+		top:0 !Important;
+	}
+}

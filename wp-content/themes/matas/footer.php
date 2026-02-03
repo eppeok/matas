@@ -81,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         videoFrame.src = originalSrc;
     });
 });
-</script>
 
+</script>
 </div>
 <?php wp_footer();?>
 </body>

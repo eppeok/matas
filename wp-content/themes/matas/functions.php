@@ -242,85 +242,6 @@ function smw_change_related_products_title( $heading ) {
 }
 
 
-/**
- * Update parent product stock based on variation stock (for sorting webinars)
- */
-add_action( 'woocommerce_variation_set_stock', 'update_parent_webinar_stock' );
-add_action( 'woocommerce_variation_set_stock_status', 'update_parent_webinar_stock' );
-
-function update_parent_webinar_stock( $variation ) {
-
-    $parent_id = $variation->get_parent_id();
-    if ( ! $parent_id ) return;
-
-    $product = wc_get_product( $parent_id );
-
-    if ( ! $product || $product->get_type() !== 'variable' ) return;
-
-    $total_stock = 0;
-
-    foreach ( $product->get_children() as $child_id ) {
-        $child = wc_get_product( $child_id );
-
-        if ( $child && $child->managing_stock() ) {
-            $total_stock += (int) $child->get_stock_quantity();
-        }
-    }
-
-    // Save total remaining seats to parent product
-    update_post_meta( $parent_id, '_total_remaining_seats', $total_stock );
-}
-/**
- * Add Remaining Seats sorting options
- */
-add_filter( 'woocommerce_catalog_orderby', 'add_stock_remaining_sorting' );
-add_filter( 'woocommerce_default_catalog_orderby_options', 'add_stock_remaining_sorting' );
-
-function add_stock_remaining_sorting( $sortby ) {
-
-    $sortby['stock_low_high']  = __( 'Sort by remaining: low to high', 'woocommerce' );
-    $sortby['stock_high_low']  = __( 'Sort by remaining: high to low', 'woocommerce' );
-
-    return $sortby;
-}
-
-add_filter( 'woocommerce_get_catalog_ordering_args', 'stock_remaining_ordering_args' );
-
-function stock_remaining_ordering_args( $args ) {
-
-    if ( isset( $_GET['orderby'] ) && in_array( $_GET['orderby'], ['stock_low_high','stock_high_low'] ) ) {
-
-        global $wpdb;
-
-        $order = $_GET['orderby'] === 'stock_low_high' ? 'ASC' : 'DESC';
-
-        // Custom ORDER BY that falls back to _stock if _total_remaining_seats doesn't exist
-        add_filter( 'posts_clauses', function( $clauses ) use ( $order, $wpdb ) {
-
-            $clauses['join'] .= " 
-                LEFT JOIN {$wpdb->postmeta} AS total_seats_meta 
-                    ON ({$wpdb->posts}.ID = total_seats_meta.post_id 
-                    AND total_seats_meta.meta_key = '_total_remaining_seats')
-
-                LEFT JOIN {$wpdb->postmeta} AS stock_meta 
-                    ON ({$wpdb->posts}.ID = stock_meta.post_id 
-                    AND stock_meta.meta_key = '_stock')
-            ";
-
-            $clauses['orderby'] = " 
-                CAST(
-                    COALESCE(total_seats_meta.meta_value, stock_meta.meta_value, 0)
-                AS UNSIGNED) {$order}
-            ";
-
-            return $clauses;
-        });
-
-    }
-
-    return $args;
-}
-
 
 add_action( 'woocommerce_after_shop_loop_item_title', 'matas_category_stock_display', 6 );
 
@@ -354,3 +275,219 @@ function matas_category_stock_display() {
 
     echo '</p>';
 }
+//sorting
+/**
+ * Remaining Quantity System
+ * Works for Variable (Webinars) + Simple (Exclusives)
+ */
+
+/**
+ * Sync remaining qty for VARIABLE products (Webinars)
+ */
+add_action( 'woocommerce_variation_set_stock', 'sync_variable_remaining_qty', 10, 1 );
+add_action( 'woocommerce_variation_set_stock_status', 'sync_variable_remaining_qty', 10, 1 );
+
+function sync_variable_remaining_qty( $variation ) {
+
+    if ( is_numeric( $variation ) ) {
+        $variation = wc_get_product( $variation );
+    }
+
+    if ( ! $variation || ! $variation->is_type( 'variation' ) ) {
+        return;
+    }
+
+    $parent_id = $variation->get_parent_id();
+    if ( ! $parent_id ) return;
+
+    $parent = wc_get_product( $parent_id );
+    if ( ! $parent || ! $parent->is_type( 'variable' ) ) return;
+
+    $total = 0;
+
+    foreach ( $parent->get_children() as $child_id ) {
+        $child = wc_get_product( $child_id );
+
+        if ( $child && $child->managing_stock() ) {
+            $qty = (int) $child->get_stock_quantity();
+            if ( $qty > 0 ) {
+                $total += $qty;
+            }
+        }
+    }
+
+    update_post_meta( $parent_id, '_remaining_qty', (int) $total );
+}
+
+/**
+ * Sync remaining qty for SIMPLE products (Mata’s Exclusives)
+ */
+add_action( 'woocommerce_product_set_stock', 'sync_simple_remaining_qty', 10, 1 );
+add_action( 'woocommerce_product_set_stock_status', 'sync_simple_remaining_qty', 10, 1 );
+
+function sync_simple_remaining_qty( $product ) {
+
+    if ( is_numeric( $product ) ) {
+        $product = wc_get_product( $product );
+    }
+
+    if ( ! $product || ! $product->is_type( 'simple' ) ) {
+        return;
+    }
+
+    $qty = (int) $product->get_stock_quantity();
+    update_post_meta( $product->get_id(), '_remaining_qty', max( 0, $qty ) );
+}
+
+/**
+ * Schedule remaining qty sync (every 10 min)
+ */
+add_action( 'init', function () {
+
+    if ( ! function_exists( 'as_next_scheduled_action' ) ) {
+        return;
+    }
+
+    if ( ! as_next_scheduled_action( 'sync_remaining_qty_action' ) ) {
+        as_schedule_recurring_action(
+            time(),
+            10 * 60,
+            'sync_remaining_qty_action'
+        );
+    }
+});
+
+/**
+ * Background sync handler
+ */
+add_action( 'sync_remaining_qty_action', 'sync_remaining_qty_action_handler' );
+
+function sync_remaining_qty_action_handler() {
+
+    $products = wc_get_products([
+        'limit'  => -1,
+        'status' => 'publish',
+        'type'   => [ 'simple', 'variable' ],
+    ]);
+
+    foreach ( $products as $product ) {
+
+        // SIMPLE
+        if ( $product->is_type( 'simple' ) ) {
+            update_post_meta(
+                $product->get_id(),
+                '_remaining_qty',
+                max( 0, (int) $product->get_stock_quantity() )
+            );
+        }
+
+        // VARIABLE
+        if ( $product->is_type( 'variable' ) ) {
+
+            $total = 0;
+
+            foreach ( $product->get_children() as $child_id ) {
+                $child = wc_get_product( $child_id );
+
+                if ( $child && $child->managing_stock() ) {
+                    $qty = (int) $child->get_stock_quantity();
+                    if ( $qty > 0 ) {
+                        $total += $qty;
+                    }
+                }
+            }
+
+            update_post_meta(
+                $product->get_id(),
+                '_remaining_qty',
+                $total
+            );
+        }
+    }
+}
+
+add_filter( 'woocommerce_catalog_orderby', 'add_remaining_qty_sorting' );
+add_filter( 'woocommerce_default_catalog_orderby_options', 'add_remaining_qty_sorting' );
+
+function add_remaining_qty_sorting( $sortby ) {
+
+    $sortby['remaining_low_high']  = __( 'Sort by remaining: low to high', 'woocommerce' );
+    $sortby['remaining_high_low']  = __( 'Sort by remaining: high to low', 'woocommerce' );
+
+    return $sortby;
+}
+
+add_filter( 'woocommerce_get_catalog_ordering_args', 'remaining_qty_ordering_args' );
+
+function remaining_qty_ordering_args( $args ) {
+
+    if ( empty( $_GET['orderby'] ) ) {
+        return $args;
+    }
+
+    // Apply on shop + categories
+    if ( ! is_post_type_archive( 'product' ) && ! is_tax( 'product_cat' ) ) {
+        return $args;
+    }
+
+    if ( $_GET['orderby'] === 'remaining_low_high' ) {
+
+        $args['orderby']  = 'meta_value_num';
+        $args['order']    = 'ASC';
+        $args['meta_key'] = '_remaining_qty';
+
+    } elseif ( $_GET['orderby'] === 'remaining_high_low' ) {
+
+        $args['orderby']  = 'meta_value_num';
+        $args['order']    = 'DESC';
+        $args['meta_key'] = '_remaining_qty';
+    }
+
+    return $args;
+}
+add_action( 'save_post_product', function ( $post_id ) {
+
+    if ( wp_is_post_revision( $post_id ) ) return;
+
+    $product = wc_get_product( $post_id );
+    if ( ! $product ) return;
+
+    if ( ! $product->managing_stock() ) {
+        update_post_meta( $post_id, '_remaining_qty', 0 );
+    }
+});
+
+/*add_action( 'admin_init', function () {
+
+    if ( ! current_user_can( 'manage_options' ) ) return;
+    if ( ! isset( $_GET['run_remaining_backfill'] ) ) return;
+
+    $products = wc_get_products([
+        'limit'  => -1,
+        'status' => 'publish',
+    ]);
+
+    foreach ( $products as $product ) {
+
+        if ( $product->is_type( 'simple' ) ) {
+            update_post_meta(
+                $product->get_id(),
+                '_remaining_qty',
+                (int) $product->get_stock_quantity()
+            );
+        }
+
+        if ( $product->is_type( 'variable' ) ) {
+            $total = 0;
+            foreach ( $product->get_children() as $child_id ) {
+                $child = wc_get_product( $child_id );
+                if ( $child && $child->managing_stock() ) {
+                    $total += (int) $child->get_stock_quantity();
+                }
+            }
+            update_post_meta( $product->get_id(), '_remaining_qty', $total );
+        }
+    }
+
+    wp_die( 'Remaining qty backfill completed' );
+});*/

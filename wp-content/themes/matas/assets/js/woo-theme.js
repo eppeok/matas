@@ -34,10 +34,15 @@ jQuery(document).ready(function(){
       jQuery('.single-product .related.products ul.products').slick({
           dots: false,
           arrows: true,
-          infinite: true,
-          speed: 600,
+          infinite: false,
+          speed: 300,
+          cssEase: 'ease-out',
           slidesToShow: 4,
           slidesToScroll: 1,
+          draggable: true,
+          swipe: true,
+          swipeToSlide: true,
+          touchMove: true,
           responsive: [
               {
                   breakpoint: 1200,

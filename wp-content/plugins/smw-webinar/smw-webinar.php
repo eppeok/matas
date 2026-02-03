@@ -2075,3 +2075,16 @@ function smw_create_webinar_product( $p ) {
 
     return $product_id;
 }
+
+/**
+ * Shortcode: [smw_cart_timer]
+ * Shows cart-reset timer ONLY when cart has items
+ */
+add_shortcode('smw_cart_timer', function () {
+
+    if ( ! function_exists('WC') || ! WC()->cart || WC()->cart->is_empty() ) {
+        return ''; // 🔒 no cart = no timer markup
+    }
+
+    return '<div id="smw-global-seat-timer" class="webanounce container" style="display:none;"></div>';
+});

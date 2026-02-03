@@ -52,8 +52,13 @@ get_header( 'shop' );?>
 				remove_action('woocommerce_archive_description','woocommerce_product_archive_description',10);
 				do_action( 'woocommerce_archive_description' );
 			?>
-	<div class="row">			
-		<div class="col-lg-12 col-md-12">
+	<div class="row">	
+		<div class="col-lg-3 col-md-12">
+		  	<div class="filterSec">
+				<?php dynamic_sidebar('sidebar-shop-archiv');?>
+			</div>
+		</div>		
+		<div class="col-lg-9 col-md-12">
 			<div class="catalog_order">
 
 				<?php
