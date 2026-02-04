@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /*
 Theme Name: Matas Theme
-
 Author: Evolv109 Labs
 Version: 2.1
 */
@@ -105,4 +104,70 @@ section#wc_filter_by_remaining_slider-2 h4 {
 	.woocommerce-error::before, .woocommerce-info::before, .woocommerce-message::before{
 		top:0 !Important;
 	}
+}
+
+/* Make Remaining slider look like Woo price slider */
+.remaining_slider_wrapper {
+    margin-top: 15px;
+}
+
+.remaining_slider.ui-slider {
+    height: .5em;
+    background: #dc2626;
+    border-radius: 4px;
+}
+
+.remaining_slider .ui-slider-range {
+    background: #fff;
+}
+
+.remaining_slider .ui-slider-handle {
+    top: -6px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #80808061;
+}
+
+.remaining_slider_amount {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.remaining_label {
+    margin-bottom: 8px;
+}
+
+.woocommerce .widget_price_filter .price_slider_amount .button{
+    display: none;
+}
+.woocommerce .widget_price_filter .price_slider_amount {
+    text-align: left;
+    line-height: 2.4;
+    font-size: .8751em;
+}
+.woocommerce .remaining-filter-form .remaining_slider_amount {
+    text-align: left;
+    line-height: 2.4;
+    font-size: .8751em;
+}
+section#wc_remaining_slider-2 {
+    margin-top: 15px;
+}
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
+    background-color: #dc2626 !important;
+}
+.woocommerce .remaining-filter-form .ui-slider {
+    position: relative;
+    text-align: left;
+    margin-left: .5em;
+    margin-right: .5em;
+}
+.remaining-filter-form .ui-widget-content{
+    border:none !important;
+}
+.remaining-filter-form .remaining_slider_amount .button {
+    background-color: #fff !important;
+    color: #1d293d !important;
 }
