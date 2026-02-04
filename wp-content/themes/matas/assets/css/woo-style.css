@@ -2,7 +2,7 @@
 :root {
     --wooWhiteColor       : #ffffff;
     --wooBlackColor       : #000000;
-    --wooThemeColor       : #23c68e;
+    --wooThemeColor       : #1d293d;
     --wooSecondaryColor   : #ecfcfe;
 }
 
@@ -218,7 +218,7 @@ p.woocommerce-result-count {
 }
 .woocommerce nav.woocommerce-pagination ul, 
 .woocommerce nav.woocommerce-pagination ul li {
-    border-color: #1b8e66;
+    border-color: #1d293d;
 }
 .woocommerce nav.woocommerce-pagination ul li a, 
 .woocommerce nav.woocommerce-pagination ul li span {
