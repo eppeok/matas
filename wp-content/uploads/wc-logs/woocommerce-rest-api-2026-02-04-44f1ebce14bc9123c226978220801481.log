@@ -1,0 +1,1 @@
+2026-02-04T18:15:00+00:00 ERROR The product with SKU (123456789) you are trying to insert is already present in the lookup table CONTEXT: {"error":"woocommerce_rest_product_not_created","code":400}

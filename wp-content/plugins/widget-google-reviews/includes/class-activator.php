@@ -38,6 +38,8 @@ class Activator {
             'grw_last_error',
             'rplg_rev_notice_show',
             'grw_rate_us',
+            'grw_inlinecss_off',
+            'grw_rucss_safelist',
         );
     }
 
@@ -205,6 +207,10 @@ class Activator {
             $wpdb->query("UPDATE " . $wpdb->prefix . Database::REVIEW_TABLE . " SET provider = 'google' WHERE provider IS NULL OR provider = ''");
             $this->database->create_text_table();
             $this->database->migrate_review_texts();
+        }
+
+        if (version_compare($last_active_version, '6.9.4.1', '<')) {
+            update_option('grw_debug_mode', '0');
         }
 
         if (!empty($wpdb->last_error)) {

@@ -51,6 +51,7 @@ class Core {
             'lazy_load_img'             => true,
             'aria_label'                => false,
             'google_def_rev_link'       => false,
+            'star_style'                => '',
             'reviewer_avatar_size'      => 56,
             'reviews_limit'             => '',
             'hidden'                    => '',
@@ -224,7 +225,7 @@ class Core {
             $reviews = $wpdb->get_results($wpdb->prepare($sql, $params));
 
             // Setup photo
-            $place_photo = empty($place->photo) ? (empty($biz->photo) ? GRW_GOOGLE_BIZ : $biz->photo) : $place->photo;
+            $place_photo = empty($biz->photo) ? (empty($place->photo) ? GRW_GOOGLE_BIZ : $place->photo) : $biz->photo;
 
             // Calculate reviews count
             if (isset($place->review_count) && $place->review_count > 0) {

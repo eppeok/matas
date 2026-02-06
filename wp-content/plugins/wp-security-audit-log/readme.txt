@@ -5,8 +5,8 @@ License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.html
 Tags: activity log, event log, user tracking, logger, history 
 Requires at least: 5.5
-Tested up to: 6.8.3
-Stable tag: 5.5.4
+Tested up to: 6.9
+Stable tag: 5.6.0
 Requires PHP: 7.4
 
 The #1 user-rated activity log plugin for event logging, activity monitoring and change tracking.
@@ -100,6 +100,7 @@ All WP Activity Log editions include activity tracking for third-party plugins, 
 - **Advanced Custom Fields (ACF)** – Log changes to post types, taxonomies, and taxonomy terms
 - **bbPress** – Track changes to forums, topics, and bbPress settings
 - **Gravity Forms** – Track changes to Gravity Forms settings, forms, and entries (leads)
+- **LearnDash** – Track changes to courses, lessons, and other system changes, as well as student activity such as course, lesson, and quiz enrollments and completions.
 - **MemberPress** – Log changes to plugin settings, memberships, payments, subscriptions, and other actions
 - **Multisite & management tools** – Track changes across your network for **MainWP, ManageWP, Modular DS, Infinite WP, WP Umbrella, WP Remote**, and other multisite management plugins
 - **Paid Membership Pro** - Log changes to membership levels, user assignments, and more. Premium users can also track order and checkout activity, and access a Members Activity panel inside each member’s profile for instant visibility into recent actions.
@@ -235,19 +236,36 @@ These capabilities make WP Activity Log a **comprehensive solution for site secu
 11. Use the plugin settings to exclude objects from the logs, configure automatic pruning of events, which timestamp to be shown in the logs, and much more. The plugin is fully configurable.
 12. Generate any type of statistics reports from the activity log with the Premium edition. You can see statistics such as number of newly registered users, number of user profile changes, number of logins, different IP addresses per user, and much more.
 13. Use the Premium edition to also export any activity log data to an HTML report or CSV file. CSV files are the most widely supported format and can easily be read, parsed, and imported into third-party systems.
+
 == Changelog ==
 
-= 5.5.4 (2025-11-19) =
+= 5.6.0 (2026-01-29) =
 
-  * **Plugin and functionality improvements**
-	 * Improved error handling in the Notifications module, mainly now reporting user-readable errors for the users.
-	 * Updated the plugin logo in the WordPress admin menu (correct size, colours, and positioning).
-	 * Added Black Friday / Cyber Monday campaign banners (21 Nov – 1 Dec).
-	 * Improved UI styling for error modal in Notification settings.
-	 * Adjusted the build process to remove duplicated return true statement in class-wsal-freemius-free.
+* **NEW: LearnDash support**
+	 * WP Activity Log can now keep a log of 100+ user actions and settings changes in LearnDash. Refer to the [LearnDash activity log event IDs](https://melapress.com/support/kb/wp-activity-log-list-event-ids/#learndash-events) for the complete list.
+	
+ * **Plugin improvements & Enhancements**
+	 * User login events now include the login URL as metadata. Mainly event ID's 1000, 1002, 1003, 1004, 1005.
+	 * Moved all the plugin's settings into the sitemeta table on multisite installs. Credit to [https://github.com/nicomollet](https://github.com/nicomollet) for the recommended fix.
+	 * Reviewed and improved input sanitization across all user and third-party data handling points.
+	 * Suppressed the activity log events generated automatically during the plugin install, to reduce event noise.
+	 * Replaced the "esc_html_e" with the "esc_html__" in some scenarios, as an improvement.
+	 * Updated event ID's 5032, 5033, 6079 to correctly attribute them to "System" instead of the logged-in user, and changed the IP address to server IP, reflecting that the update checks were run by the system, and that they were not user actions.
+	 * Removed the title from the "disable this type of event" hover over tooltip in the activity log viewer for cleaner UI presentation.
+	 * Removed obsolete "Modify" button from event IDs 1002, 1003, 6007, and 6023 tooltips.
 
-  * **Bug fixes**
-	 * Fixed a typo in the description of event ID 5523.
-	 * Fixed additional minor PHP warnings reported in certain environments.
+ * **Security fix**
+	 * Fixed a reported XSS. Credits to Steven Julian.
+
+ * **Bug fixes**
+	 * Fixed PHP 8.3 TypeError in WooCommerce product editing caused by strpos() receiving a false value instead of string in class-woocommerce-sensor-helper-second.php line 290, which was preventing users from editing products and causing critical failure notices.
+	 * Fixed email validation in periodic reports configuration to accept longer custom domain TLDs, such as .digital.
+	 * Fixed a conflict when WP Activity Log is network-activated on multisite installations alongside SearchWP.
+	 * Fixed the Activity Log menu icon styling on multisite sub-sites by correcting a CSS selector.
+	 * Fixed a number of PHP warnings in the WP 2FA sensor by resolving undefined variable issues in class-wp-2fa-sensor.php that occurred during WP 2FA plugin installation where WP Activity Log was already activated.
+	 * Fixed a fatal PHP TypeError in the IP address normalization module where str_replace() received a boolean false instead of a string during a cron job execution on newer PHP versions.
+	 * Fixed a PHP warning for undefined array key "Network" in class-wp-plugins-themes-sensor.php line 603, that occurred in edge cases during plugin/theme operations on live websites.
+	 * Fixed a number of PHP warnings that occurred when attempting to read properties (ID and post_title) on null objects in the WooCommerce activity log sensor.
+	 * Fixed an edge where false positive event ID 9119 was triggering when WooCommerce product low stock threshold remained unchanged.
 
 Refer to the complete [plugin changelog](https://melapress.com/support/kb/wp-activity-log-plugin-changelog/?utm_source=wp+repo&utm_medium=repo+link&utm_campaign=wordpress_org&utm_content=wsal) for more detailed information about what was new, improved and fixed in previous version updates of WP Activity Log.

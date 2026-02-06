@@ -41,6 +41,7 @@ class Plugin_Settings {
         $async_css           = get_option('grw_async_css');
         $grw_demand_assets   = get_option('grw_demand_assets');
         $grw_rucss_safelist  = get_option('grw_rucss_safelist');
+        $grw_inlinecss_off   = get_option('grw_inlinecss_off');
         $grw_freq_revs_upd   = get_option('grw_freq_revs_upd');
         $gpa_old             = get_option('grw_gpa_old');
         $grw_google_api_key  = get_option('grw_google_api_key');
@@ -96,6 +97,19 @@ class Plugin_Settings {
                                     <input type="hidden" name="grw_demand_assets" value="false">
                                     <input type="checkbox" id="grw_demand_assets" name="grw_demand_assets" value="true" <?php checked('true', $grw_demand_assets); ?>>
                                     Load static assets (JS/CSS) only on pages where reviews are showing
+                                </label>
+                            </div>
+                        </div>
+                        <div class="grw-field">
+                            <div class="grw-field-label">
+                                <label>Disable inline CSS</label>
+                            </div>
+                            <div class="wp-review-field-option">
+                                <label>
+                                    <input type="hidden" name="grw_inlinecss_off" value="false">
+                                    <input type="checkbox" id="grw_inlinecss_off" name="grw_inlinecss_off" value="true" <?php checked('true', $grw_inlinecss_off); ?>>
+                                    Do not output the plugin’s inline CSS styles.<br>
+                                    <b>Do not turn on this</b> to ensure the latest styles and avoid caching issues after updates.
                                 </label>
                             </div>
                         </div>

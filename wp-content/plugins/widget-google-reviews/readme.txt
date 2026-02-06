@@ -1,10 +1,10 @@
 === Rich Showcase for Google Reviews ===
 Contributors: widgetpack
-Tags: google reviews, reviews, google places reviews, testimonials, ratings
+Tags: google reviews, reviews, business reviews, testimonials, widget
 Requires at least: 4.7
 Requires PHP: 7.2
 Tested up to: 6.9
-Stable tag: 6.9.1
+Stable tag: 6.9.4.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,37 @@ Email support in English is also available on weekdays: support@richplugins.com
 * Improve: New option Style Options / Review photos max lines
 
 == Changelog ==
+
+= 6.9.4.3 =
+* Added stable CSS-based transparent borders for slider buttons
+* Improved slider performance and UI
+* Fixed minor styling issues
+
+= 6.9.4.2 =
+* Use standard WordPress function for inline CSS
+* Added aria-labels for slider prev and next buttons
+* Fixed W3C validation warnings
+
+= 6.9.4.1 =
+* Fixed an issue with duplicated star icons
+* Fixed header centering issue
+* Minor style fixes
+
+= 6.9.4 =
+* Fixed conflicts between star icons
+* Added an option to disable inline CSS output
+* Minor style fixes
+
+= 6.9.3 =
+* Completely redesigned frontend
+* Updated star icons with a new modern look
+* Removed legacy styles and forced CSS cleanup, with major CSS refactoring
+* Improved layout consistency, responsiveness, and performance
+
+= 6.9.2 =
+* Improve: Shortcode appears immediately after reviews are connected in widget
+* Bugfix: Custom business photo for Google places in widgets
+* Minor style adjustments
 
 = 6.9.1 =
 * Improve: New Google reviews connection wizard

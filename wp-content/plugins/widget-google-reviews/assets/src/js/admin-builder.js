@@ -133,18 +133,6 @@ const GRW_HTML_CONTENT =
                     'Hide reviews without text' +
                 '</label>' +
             '</div>' +
-            /*'<div class="grw-builder-option">' +
-                '<label>' +
-                    '<input type="checkbox" name="media" value="" checked>' +
-                    'Show review images' +
-                '</label>' +
-            '</div>' +
-            '<div class="grw-builder-option">' +
-                '<label>' +
-                    '<input type="checkbox" name="reply" value="" checked>' +
-                    'Show owner responses' +
-                '</label>' +
-            '</div>' +*/
             '<div class="grw-builder-option">' +
                 '<label>' +
                     '<input type="checkbox" name="header_hide_social" value="">' +
@@ -253,8 +241,8 @@ const GRW_HTML_CONTENT =
                 'Button color' +
             '</div>' +
             '<div class="grw-builder-option">' +
-                '<input type="color" name="--rev-color" value="#fafafa" data-val="#fafafa" data-defval="#fafafa"/>' +
-                '<input type="text" value="#fafafa"/>' +
+                '<input type="color" name="--rev-color" value="#f4f4f4" data-val="#f4f4f4" data-defval="#f4f4f4"/>' +
+                '<input type="text" value="#f4f4f4"/>' +
                 'Reviews color' +
             '</div>' +
             '<div class="grw-builder-option">' +
@@ -278,9 +266,15 @@ const GRW_HTML_CONTENT =
                     'Dark background' +
                 '</label>' +
             '</div>' +
-            '<div class="grw-builder-option">' +
+            /*'<div class="grw-builder-option">' +
                 '<label>' +
                     '<input type="checkbox" name="hide_backgnd" value="">' +
+                    'Hide reviews background' +
+                '</label>' +
+            '</div>' +*/
+            '<div class="grw-builder-option">' +
+                '<label>' +
+                    '<input type="checkbox" name="--rev-color" value="#f4f4f4" data-on="transparent" data-off="#f4f4f4" data-defval="#f4f4f4">' +
                     'Hide reviews background' +
                 '</label>' +
             '</div>' +
@@ -310,11 +304,9 @@ const GRW_HTML_CONTENT =
             '</div>' +
             '<div class="grw-builder-option">' +
                 '<label>' +
-                    '<input type="checkbox" name="google_def_rev_link">' +
-                    'Use default Google reviews link' +
+                    '<input type="checkbox" name="nofollow_link" checked>' +
+                    'Use no follow links' +
                 '</label>' +
-                '<span class="grw-quest grw-quest-top grw-toggle" title="Click to help">?</span>' +
-                '<div class="grw-quest-help" style="display:none;">If the direct link to all reviews <b>https://search.google.com/local/reviews?placeid=&lt;PLACE_ID&gt;</b> does not work with your Google place (leads to 404), please use this option to use the default reviews link to Google map.</div>' +
             '</div>' +
             '<div class="grw-builder-option">' +
                 '<label>' +
@@ -324,15 +316,36 @@ const GRW_HTML_CONTENT =
             '</div>' +
             '<div class="grw-builder-option">' +
                 '<label>' +
-                    '<input type="checkbox" name="nofollow_link" checked>' +
-                    'Use no follow links' +
+                    '<input type="checkbox" name="aria_label">' +
+                    'Enable ARIA label for screen readers' +
                 '</label>' +
             '</div>' +
             '<div class="grw-builder-option">' +
                 '<label>' +
-                    '<input type="checkbox" name="aria_label">' +
-                    'Enable ARIA label for screen readers' +
+                    '<input type="checkbox" name="media" value="" checked>' +
+                    'Show review images' +
                 '</label>' +
+            '</div>' +
+            '<div class="grw-builder-option">' +
+                '<label>' +
+                    '<input type="checkbox" name="reply" value="" checked>' +
+                    'Show owner responses' +
+                '</label>' +
+            '</div>' +
+            '<div class="grw-builder-option">' +
+                '<label>' +
+                    '<input type="checkbox" name="google_def_rev_link">' +
+                    'Use default Google reviews link' +
+                '</label>' +
+                '<span class="grw-quest grw-quest-top grw-toggle" title="Click to help">?</span>' +
+                '<div class="grw-quest-help" style="display:none;">If the direct link to all reviews <b>https://search.google.com/local/reviews?placeid=&lt;PLACE_ID&gt;</b> does not work with your Google place (leads to 404), please use this option to use the default reviews link to Google map.</div>' +
+            '</div>' +
+            '<div class="grw-builder-option">' +
+                'Widget style' +
+                '<select name="style">' +
+                    '<option value="legacy">Legacy</option>' +
+                    '<option value="modern" selected="selected">Modern</option>' +
+                '</select>' +
             '</div>' +
             '<div class="grw-builder-option">' +
                 'Reviewer avatar size' +
@@ -546,11 +559,11 @@ function grw_builder_init($, data) {
     // Init slider breakpoints
     grw_sbs_init();
 
-    $('.grw-connect-options input[type="text"],.grw-connect-options textarea').keyup(function() {
+    $('.grw-connect-options input[type="text"]:not([name^="--"]),.grw-connect-options textarea').keyup(function() {
         clearTimeout(GRW_AUTOSAVE_TIMEOUT);
         GRW_AUTOSAVE_TIMEOUT = setTimeout(grw_serialize_connections, GRW_AUTOSAVE_KEYUP_TIMEOUT);
     });
-    $('.grw-connect-options input[type="checkbox"],.grw-connect-options select').change(function() {
+    $('.grw-connect-options input[type="checkbox"]:not([name^="--"]),.grw-connect-options select').change(function() {
         grw_serialize_connections();
     });
     $('.grw-connect-options input[name^="--"]').on('input', function() {
@@ -608,7 +621,7 @@ function grw_builder_init($, data) {
     // Confirmation alert before close the page if unautosave
     window.addEventListener('beforeunload', function(e) {
         const url = new URL(window.location.href);
-        if (!_isSubmit && (!url.searchParams.has('grw_feed_id') || GRW_AUTOSAVE_TIMEOUT)) {
+        if (window.grw_post_id.value && !_isSubmit && (!url.searchParams.has('grw_feed_id') || GRW_AUTOSAVE_TIMEOUT)) {
             e.preventDefault();
             e.returnValue = '';
         }
@@ -782,7 +795,11 @@ function grw_feed_save_ajax() {
         });
 
         if (!window.grw_post_id.value) {
-            var post_id = document.querySelector('.wp-gr').getAttribute('data-id');
+            const post_id = document.querySelector('.wp-gr').getAttribute('data-id');
+            const toolbar_el = document.querySelector('.grw-toolbar-control');
+            const label = document.createElement('label');
+            label.innerHTML = '<span id="grw_sc_msg">Copy Shortcode </span> <input id="grw_sc" type="text" value="[grw id=' + post_id + ']" data-grw-shortcode="[grw id=' + post_id + ']" onclick="this.select(); document.execCommand(\'copy\'); window.grw_sc_msg.innerHTML = \'Shortcode Copied! Paste on page. \';" readonly="">';
+            toolbar_el.insertBefore(label, window.grw_save);
             window.grw_post_id.value = post_id;
             //window.location.href = GRW_VARS.builderUrl + '&grw_feed_id=' + post_id + '&grw_feed_new=1';
         }

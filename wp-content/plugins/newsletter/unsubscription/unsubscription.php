@@ -158,7 +158,7 @@ class NewsletterUnsubscription extends NewsletterModule {
                 break;
 
             case 'reactivate':
-                $verified = wp_verify_nonce($_REQUEST['_wpnonce'], 'newsletter-unsubscribe');
+                $verified = wp_verify_nonce($_REQUEST['_wpnonce'], 'newsletter-reactivate');
                 if (!$verified) {
                     die('Unverified request');
                 }

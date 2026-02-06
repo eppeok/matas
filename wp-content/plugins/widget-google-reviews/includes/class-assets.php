@@ -8,11 +8,16 @@ class Assets {
     private $version;
     private $debug;
 
+    private $css_cache = array();
+
     private static $css_assets = array(
         'grw-admin-main-css'      => 'css/admin-main',
-        'grw-public-clean-css'    => 'css/public-clean',
         'grw-public-main-css'     => 'css/public-main',
+        'grw-public-badge-css'    => 'css/public-badge',
 
+        'rpi-flex-css'            => 'https://cdn.reviewsplugin.com/assets/css/flex.css',
+        'rpi-stars-css'           => 'https://cdn.reviewsplugin.com/assets/css/stars.css',
+        'rpi-slider-css'          => 'https://cdn.reviewsplugin.com/assets/css/slider.css',
         'rpi-common-css'          => 'https://cdn.reviewsplugin.com/assets/css/common.css',
         'rpi-lightbox-css'        => 'https://cdn.reviewsplugin.com/assets/css/lightbox.css'
     );
@@ -82,7 +87,6 @@ class Assets {
     function style_async($tag, $handle) {
         $css_assets = array(
             'grw-admin-main-css'   => 'css/admin-main',
-            'grw-public-clean-css' => 'css/public-clean',
             'grw-public-main-css'  => 'css/public-main',
         );
         if (isset($handle) && array_key_exists($handle, $css_assets)) {
@@ -101,10 +105,16 @@ class Assets {
     }
 
     public function register_styles() {
-        $styles = array('grw-admin-main-css', 'grw-public-main-css', 'rpi-common-css', 'rpi-lightbox-css');
-        if ($this->debug) {
-            array_push($styles, 'grw-public-clean-css');
-        }
+        $styles = array(
+            'grw-admin-main-css',
+            'grw-public-main-css',
+            'grw-public-badge-css',
+            'rpi-flex-css',
+            'rpi-stars-css',
+            'rpi-slider-css',
+            'rpi-common-css',
+            'rpi-lightbox-css'
+        );
         $this->register_styles_loop($styles);
     }
 
@@ -158,13 +168,28 @@ class Assets {
 
     public function enqueue_public_styles() {
         if ($this->debug) {
-            wp_enqueue_style('grw-public-clean-css');
-            wp_style_add_data('grw-public-clean-css', 'rtl', 'replace');
+            wp_enqueue_style('rpi-flex-css');
+            wp_enqueue_style('rpi-stars-css');
+            wp_enqueue_style('rpi-slider-css');
             wp_enqueue_style('rpi-common-css');
             wp_enqueue_style('rpi-lightbox-css');
         }
-        wp_enqueue_style('grw-public-main-css');
-        wp_style_add_data('grw-public-main-css', 'rtl', 'replace');
+
+        $handle = 'grw-public-main-css';
+        $inlinecss_off = get_option('grw_inlinecss_off');
+        if ($inlinecss_off !== 'true') {
+            $css = $this->get_css_content('public-main');
+            if (!empty($css)) {
+                wp_dequeue_style($handle);
+                wp_deregister_style($handle);
+                wp_register_style($handle, false);
+                wp_enqueue_style($handle);
+                wp_add_inline_style($handle, $css);
+                return;
+            }
+        }
+        wp_enqueue_style($handle);
+        wp_style_add_data($handle, 'rtl', 'replace');
     }
 
     public function enqueue_public_scripts() {
@@ -206,4 +231,18 @@ class Assets {
         return $this->version;
     }
 
+    private function get_css_content($name) {
+        $key = $name . (is_rtl() ? '-rtl' : '');
+
+        if (isset($this->css_cache[$key])) {
+            return $this->css_cache[$key];
+        }
+
+        $file = GRW_PLUGIN_PATH . '/assets/' . ($this->debug ? 'src/' : '') . 'css/' . $key . '.css';
+        if (!file_exists($file) || !is_readable($file)) {
+            return $this->css_cache[$key] = '';
+        }
+        $css = (string) file_get_contents($file);
+        return $this->css_cache[$key] = $css;
+    }
 }

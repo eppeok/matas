@@ -120,7 +120,7 @@ class Builder_Page {
                     </div>
                     <div class="grw-rate_us-body">
                         Rate us clicking on the stars:
-                        <?php $this->view->grw_stars(5); ?>
+                        <span class="rpi-star" data-rating="5" style="--rpi-star-size:26px;--gap:0"><i></i><i></i><i></i><i></i><i></i></span>
                     </div>
                 </div>
             </div>
@@ -129,8 +129,8 @@ class Builder_Page {
 
         <div id="grw-rate_us-feedback" title="Thanks for your feedback!" style="display:none;">
             <b>Please tell us how we can improve the plugin.</b>
-            <p style="font-size:16px;">
-                <span id="grw-rate_us-feedback-stars"></span>
+            <p>
+                <span class="rpi-star" data-rating="5" style="--rpi-star-size:26px;--gap:0"><i></i><i></i><i></i><i></i><i></i></span>
             </p>
             <p style="font-size:16px;">
                 <input type="text" value="<?php global $current_user; echo $current_user->user_email; ?>" placeholder="Contact email"/>
