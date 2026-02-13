@@ -3,7 +3,7 @@
 Plugin Name: SMW Webinar — Events & Ticketing
 Description: SMW Webinar is a plugin for ticketing system.
 Version: 2.0
-Author: Mimo Dev
+Author: Evolv109
 Author URI: https://evolv109.com/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
