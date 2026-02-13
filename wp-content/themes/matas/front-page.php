@@ -66,14 +66,13 @@ get_header();
                 </section>
                
 
-                   <!-- Featured Equipment -->
+                   <!-- Featured Equipment 
                 <section class="setPosition commonPadding featured_equipment half_slider">
                     <div class="section-header">
                         <h2><?php the_field('featured_title'); ?></h2>
                         <p><?php the_field('featured_content'); ?></p>
                     </div>
                     <div class="carousel container">
-
                     <?php
                      $args = array(
                                      'post_type' => 'equipment',
@@ -93,12 +92,76 @@ get_header();
                                 <div class="card-subtitle"><?php echo get_the_content(); ?></div>
                             </div>
                         </div>
-
                      <?php } } wp_reset_postdata(); ?>  
-
-
+                    </div>
+                </section> -->
+                <!-- Featured Matas Exclusive Products -->
+                <section class="setPosition commonPadding featured_equipment half_slider">
+                    <div class="section-header">
+                        <h2><?php the_field('featured_title'); ?></h2>
+                        <p><?php the_field('featured_content'); ?></p>
                     </div>
 
+                    <div class="carousel container">
+                        <?php
+                        
+                        // ===== FEATURE OPTION =====
+                        $show_only_featured = true; // change to false if you want all products
+                        
+                        $tax_query = array(
+                            array(
+                                'taxonomy' => 'product_cat',
+                                'field'    => 'slug',
+                                'terms'    => 'matas-exclusives',
+                            ),
+                        );
+
+                        // Add featured filter if enabled
+                        if ($show_only_featured) {
+                            $tax_query[] = array(
+                                'taxonomy' => 'product_visibility',
+                                'field'    => 'name',
+                                'terms'    => 'featured',
+                            );
+                        }
+
+                        $args = array(
+                            'post_type'      => 'product',
+                            'posts_per_page' => 8,
+                            'order'          => 'ASC',
+                            'tax_query'      => $tax_query,
+                        );
+
+                        $query = new WP_Query($args);
+
+                        if ($query->have_posts()) {
+                            while ($query->have_posts()) {
+                                $query->the_post();
+                                global $product;
+                                ?>
+                                <a href="<?php the_permalink(); ?>" class="product-link-overlay">
+                                <div class="slide equipment-card">
+                                    <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>" 
+                                        alt="<?php the_title_attribute(); ?>" 
+                                        class="equipment-image" />
+                                        
+                                    <div class="slide-caption card-overlay">
+                                        <div class="card-title"><?php the_title(); ?></div>
+                                        <div class="card-price">
+                                            <?php echo $product->get_price_html(); ?>
+                                        </div>
+                                        <div class="card-subtitle">
+                                            <?php echo wp_trim_words(get_the_excerpt(), 10); ?>
+                                        </div>
+                                    </div>
+                                </div>
+                                </a>
+                            <?php }
+                        }
+
+                        wp_reset_postdata();
+                        ?>
+                    </div>
                 </section>
 
                
@@ -248,7 +311,7 @@ get_header();
                             </div>
                         </div>
 
-                        <div class="testimonial">
+                        <!--<div class="testimonial">
                        
                    <?php
                       $args = array(
@@ -297,8 +360,9 @@ get_header();
 
                           <?php } } wp_reset_postdata(); ?>
                           
-                        </div>
-                        <div class="cta-section mt-5">
+                        </div>-->
+                        <div class="testimonial"><?php echo do_shortcode('[trustindex no-registration=google]'); ?></div>
+                        <div class="cta-section">
                             <h3><?php the_field('share_cta_section_title'); ?></h3>
                             <p><?php the_field('share_cta_section_description'); ?></p>
                             <a href ="<?php the_field('share_cta_section_button_link'); ?>" class="btn-submit commonHoverEffect"><?php the_field('share_cta_section_button_text'); ?></a>

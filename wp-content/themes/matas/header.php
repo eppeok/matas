@@ -40,12 +40,12 @@
                                     <?php wp_nav_menu( array('menu' => 'Header Menu' , 'container' => '' , 'items_wrap' => '%3$s' )); ?>
                                 </ul>
                             
-                                <form role="search" method="get" class="d-flex" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                <!--<form role="search" method="get" class="d-flex" action="<?php echo esc_url( home_url( '/' ) ); ?>">
                                   <input type="search" id="woocommerce-product-search-field" class="search-field" placeholder="Search product" value="<?php echo get_search_query(); ?>" name="s" />
                                   <button type="submit" value="Search"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-4 h-4"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg></button>
                                   <input type="hidden" name="post_type" value="product" />
-                                </form>
-                                <?php //echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
+                                </form>-->
+                                <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>
 
                                 <a href ="<?php echo esc_url( home_url( '/' ) ) ;?>cart" class="cart-btn">
                                     <img src="<?php echo esc_url( home_url( '/' ) ) ;?>wp-content/uploads/2025/11/SVG_margin.png" /> Cart

@@ -1,0 +1,791 @@
+0000.000 (0) Opened log file at time: Mon, 09 Feb 2026 21:54:17 +0000 on https://ghostwhite-flamingo-672332.hostingersite.com
+0000.001 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 1.26.1 WP: 6.9.1 PHP: 8.2.28 (litespeed, Linux us-phx-web556.main-hosting.eu 5.14.0-570.18.1.el9_6.x86_64 #1 SMP PREEMPT_DYNAMIC Tue May 27 21:47:45 EDT 2025 x86_64) MySQL: 11.8.3-MariaDB-log (max packet size=1073741824) WPLANG: en_US Server: LiteSpeed safe_mode: 0 max_execution_time: 900 memory_limit: 512M (used: 17.3M | 18M) multisite: N openssl: OpenSSL 3.2.2 4 Jun 2024 mcrypt: N LANG:  WP Proxy: disabled ZipArchive::addFile: Y
+0000.002 (0) Free space on disk containing Updraft's temporary directory: 1950340.8 MB
+0000.006 (0) Tasks: Backup files: 1 (schedule: manual) Backup DB: 1 (schedule: manual)
+0000.009 (0) Requesting semaphore lock (fd) (apparently not via scheduler)
+0000.010 (0) Set semaphore last lock (fd) time to 2026-02-09 21:54:17
+0000.010 (0) Semaphore lock (fd) complete
+0000.013 (0) Backup run: resumption=0, nonce=53a13f37c198, file_nonce=53a13f37c198 begun at=1770674057 (0s ago), job type=backup
+0000.014 (0) Scheduling a resumption (1) after 300 seconds (1770674357) in case this run gets aborted
+0000.041 (0) Checking if we have a zip executable available
+0000.041 (0) Testing: /usr/bin/zip
+0000.045 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.045 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.046 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.046 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0000.047 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0000.055 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0000.056 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0000.059 (0) Working binary zip found: /usr/bin/zip
+0000.060 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0000.061 (0) Creation of backups of directories: beginning
+0000.063 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0003.101 (0) Total entities for the zip file: 2465 directories, 14823 files (0 skipped as non-modified), 182.6 MB
+0003.106 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 2.0 seconds have passed since the last write (0 MB, 1 (1) files added so far); re-opening (prior size: 0 KB)
+0003.196 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: size is now: 0.60 MB
+0003.207 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 100 files added (on-disk size: 585.2 KB)
+0003.215 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 200 files added (on-disk size: 585.2 KB)
+0003.224 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 300 files added (on-disk size: 585.2 KB)
+0003.233 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 400 files added (on-disk size: 585.2 KB)
+0003.242 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 500 files added (on-disk size: 585.2 KB)
+0003.256 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 600 files added (on-disk size: 585.2 KB)
+0003.270 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 700 files added (on-disk size: 585.2 KB)
+0003.284 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 800 files added (on-disk size: 585.2 KB)
+0003.298 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 900 files added (on-disk size: 585.2 KB)
+0003.311 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 1000 files added (on-disk size: 585.2 KB)
+0003.312 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (11.2 MB, 14823 files batched, 1001 (1002) added so far); re-opening (prior size: 585.2 KB)
+0003.976 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: size is now: 6.20 MB
+0003.991 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 1100 files added (on-disk size: 6316.4 KB)
+0004.005 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 1200 files added (on-disk size: 6316.4 KB)
+0004.019 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 1300 files added (on-disk size: 6316.4 KB)
+0004.033 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 1400 files added (on-disk size: 6316.4 KB)
+0004.047 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 1500 files added (on-disk size: 6316.4 KB)
+0004.065 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 1600 files added (on-disk size: 6316.4 KB)
+0004.079 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 1700 files added (on-disk size: 6316.4 KB)
+0004.093 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 1800 files added (on-disk size: 6316.4 KB)
+0004.107 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 1900 files added (on-disk size: 6316.4 KB)
+0004.121 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 2000 files added (on-disk size: 6316.4 KB)
+0004.122 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (14.7 MB, 14823 files batched, 1001 (2003) added so far); re-opening (prior size: 6316.4 KB)
+0005.075 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: size is now: 10.30 MB
+0005.086 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 2100 files added (on-disk size: 10502.3 KB)
+0005.098 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 2200 files added (on-disk size: 10502.3 KB)
+0005.109 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 2300 files added (on-disk size: 10502.3 KB)
+0005.120 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 2400 files added (on-disk size: 10502.3 KB)
+0005.130 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 2500 files added (on-disk size: 10502.3 KB)
+0005.141 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 2600 files added (on-disk size: 10502.3 KB)
+0005.150 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 2700 files added (on-disk size: 10502.3 KB)
+0005.166 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 2800 files added (on-disk size: 10502.3 KB)
+0005.180 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 2900 files added (on-disk size: 10502.3 KB)
+0005.190 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 3000 files added (on-disk size: 10502.3 KB)
+0005.191 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (9.6 MB, 14823 files batched, 1001 (3004) added so far); re-opening (prior size: 10502.3 KB)
+0006.401 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: size is now: 13.20 MB
+0006.411 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 3100 files added (on-disk size: 13557.5 KB)
+0006.421 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 3200 files added (on-disk size: 13557.5 KB)
+0006.429 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 3300 files added (on-disk size: 13557.5 KB)
+0006.442 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 3400 files added (on-disk size: 13557.5 KB)
+0006.458 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 3500 files added (on-disk size: 13557.5 KB)
+0006.471 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 3600 files added (on-disk size: 13557.5 KB)
+0006.484 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 3700 files added (on-disk size: 13557.5 KB)
+0006.495 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 3800 files added (on-disk size: 13557.5 KB)
+0006.506 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 3900 files added (on-disk size: 13557.5 KB)
+0006.515 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 4000 files added (on-disk size: 13557.5 KB)
+0006.516 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (10 MB, 14823 files batched, 1001 (4005) added so far); re-opening (prior size: 13557.5 KB)
+0007.137 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: size is now: 20.40 MB
+0007.147 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 4100 files added (on-disk size: 20918 KB)
+0007.159 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 4200 files added (on-disk size: 20918 KB)
+0007.173 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 4300 files added (on-disk size: 20918 KB)
+0007.187 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 4400 files added (on-disk size: 20918 KB)
+0007.200 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 4500 files added (on-disk size: 20918 KB)
+0007.214 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 4600 files added (on-disk size: 20918 KB)
+0007.225 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 4700 files added (on-disk size: 20918 KB)
+0007.236 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 4800 files added (on-disk size: 20918 KB)
+0007.246 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 4900 files added (on-disk size: 20918 KB)
+0007.258 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 5000 files added (on-disk size: 20918 KB)
+0007.260 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (5.4 MB, 14823 files batched, 1001 (5006) added so far); re-opening (prior size: 20918 KB)
+0007.783 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 5100 files added (on-disk size: 22672.7 KB)
+0007.794 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 5200 files added (on-disk size: 22672.7 KB)
+0007.804 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 5300 files added (on-disk size: 22672.7 KB)
+0007.815 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 5400 files added (on-disk size: 22672.7 KB)
+0007.824 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 5500 files added (on-disk size: 22672.7 KB)
+0007.833 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 5600 files added (on-disk size: 22672.7 KB)
+0007.841 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 5700 files added (on-disk size: 22672.7 KB)
+0007.859 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 5800 files added (on-disk size: 22672.7 KB)
+0007.872 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 5900 files added (on-disk size: 22672.7 KB)
+0007.886 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 6000 files added (on-disk size: 22672.7 KB)
+0007.888 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (9.4 MB, 14823 files batched, 1001 (6007) added so far); re-opening (prior size: 22672.7 KB)
+0008.601 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 6100 files added (on-disk size: 25061.6 KB)
+0008.610 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 6200 files added (on-disk size: 25061.6 KB)
+0008.619 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 6300 files added (on-disk size: 25061.6 KB)
+0008.627 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 6400 files added (on-disk size: 25061.6 KB)
+0008.636 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 6500 files added (on-disk size: 25061.6 KB)
+0008.645 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 6600 files added (on-disk size: 25061.6 KB)
+0008.658 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 6700 files added (on-disk size: 25061.6 KB)
+0008.673 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 6800 files added (on-disk size: 25061.6 KB)
+0008.687 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 6900 files added (on-disk size: 25061.6 KB)
+0008.698 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 7000 files added (on-disk size: 25061.6 KB)
+0008.700 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (8.4 MB, 14823 files batched, 1001 (7008) added so far); re-opening (prior size: 25061.6 KB)
+0009.504 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 7100 files added (on-disk size: 27489.9 KB)
+0009.649 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 7200 files added (on-disk size: 27489.9 KB)
+0009.796 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 7300 files added (on-disk size: 27489.9 KB)
+0009.941 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 7400 files added (on-disk size: 27489.9 KB)
+0010.097 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 7500 files added (on-disk size: 27489.9 KB)
+0010.249 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 7600 files added (on-disk size: 27489.9 KB)
+0010.412 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 7700 files added (on-disk size: 27489.9 KB)
+0010.562 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 7800 files added (on-disk size: 27489.9 KB)
+0010.709 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 7900 files added (on-disk size: 27489.9 KB)
+0010.859 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 8000 files added (on-disk size: 27489.9 KB)
+0010.874 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (3.9 MB, 14823 files batched, 1001 (8009) added so far); re-opening (prior size: 27489.9 KB)
+0011.434 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 8100 files added (on-disk size: 28897.3 KB)
+0011.447 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 8200 files added (on-disk size: 28897.3 KB)
+0011.460 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 8300 files added (on-disk size: 28897.3 KB)
+0011.472 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 8400 files added (on-disk size: 28897.3 KB)
+0011.481 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 8500 files added (on-disk size: 28897.3 KB)
+0011.490 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 8600 files added (on-disk size: 28897.3 KB)
+0011.500 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 8700 files added (on-disk size: 28897.3 KB)
+0011.510 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 8800 files added (on-disk size: 28897.3 KB)
+0011.522 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 8900 files added (on-disk size: 28897.3 KB)
+0011.531 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 9000 files added (on-disk size: 28897.3 KB)
+0011.533 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (4.3 MB, 14823 files batched, 1001 (9010) added so far); re-opening (prior size: 28897.3 KB)
+0012.201 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 9100 files added (on-disk size: 30296.3 KB)
+0012.213 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 9200 files added (on-disk size: 30296.3 KB)
+0012.225 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 9300 files added (on-disk size: 30296.3 KB)
+0012.235 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 9400 files added (on-disk size: 30296.3 KB)
+0012.246 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 9500 files added (on-disk size: 30296.3 KB)
+0012.258 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 9600 files added (on-disk size: 30296.3 KB)
+0012.272 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 9700 files added (on-disk size: 30296.3 KB)
+0012.285 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 9800 files added (on-disk size: 30296.3 KB)
+0012.296 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 9900 files added (on-disk size: 30296.3 KB)
+0012.306 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 10000 files added (on-disk size: 30296.3 KB)
+0012.308 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (23 MB, 14823 files batched, 1001 (10011) added so far); re-opening (prior size: 30296.3 KB)
+0014.022 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: size is now: 37.40 MB
+0014.037 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 10100 files added (on-disk size: 38306.4 KB)
+0014.046 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 10200 files added (on-disk size: 38306.4 KB)
+0014.060 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 10300 files added (on-disk size: 38306.4 KB)
+0014.072 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 10400 files added (on-disk size: 38306.4 KB)
+0014.080 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 10500 files added (on-disk size: 38306.4 KB)
+0014.090 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 10600 files added (on-disk size: 38306.4 KB)
+0014.100 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 10700 files added (on-disk size: 38306.4 KB)
+0014.113 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 10800 files added (on-disk size: 38306.4 KB)
+0014.127 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 10900 files added (on-disk size: 38306.4 KB)
+0014.139 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 11000 files added (on-disk size: 38306.4 KB)
+0014.141 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (10.6 MB, 14823 files batched, 1001 (11012) added so far); re-opening (prior size: 38306.4 KB)
+0015.161 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 11100 files added (on-disk size: 41607.5 KB)
+0015.176 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 11200 files added (on-disk size: 41607.5 KB)
+0015.190 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 11300 files added (on-disk size: 41607.5 KB)
+0015.204 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 11400 files added (on-disk size: 41607.5 KB)
+0015.218 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 11500 files added (on-disk size: 41607.5 KB)
+0015.232 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 11600 files added (on-disk size: 41607.5 KB)
+0015.246 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 11700 files added (on-disk size: 41607.5 KB)
+0015.259 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 11800 files added (on-disk size: 41607.5 KB)
+0015.282 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 11900 files added (on-disk size: 41607.5 KB)
+0015.293 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 12000 files added (on-disk size: 41607.5 KB)
+0015.296 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (12.2 MB, 14823 files batched, 1001 (12013) added so far); re-opening (prior size: 41607.5 KB)
+0016.179 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 12100 files added (on-disk size: 46859.6 KB)
+0016.190 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 12200 files added (on-disk size: 46859.6 KB)
+0016.201 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 12300 files added (on-disk size: 46859.6 KB)
+0016.211 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 12400 files added (on-disk size: 46859.6 KB)
+0016.221 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 12500 files added (on-disk size: 46859.6 KB)
+0016.232 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 12600 files added (on-disk size: 46859.6 KB)
+0016.241 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 12700 files added (on-disk size: 46859.6 KB)
+0016.249 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 25 MB added on this batch (25.1 MB, 14823 files batched, 768 (12781) added so far); re-opening (prior size: 46859.6 KB)
+0018.092 (0) A useful amount of data was added after this amount of zip processing: 2.9 s (normalised: 2.8 s, rate: 9003.4 KB/s)
+0018.094 (0) Performance is good - will increase the amount of data we attempt to batch (time=2.8531448841095, normalised_time=2.8433663651308, max_time=18.092683076859, data points known=1, old_max_bytes=26214400, new_max_bytes=100083233)
+0018.097 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 12800 files added (on-disk size: 54120.7 KB)
+0018.108 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 12900 files added (on-disk size: 54120.7 KB)
+0018.120 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 13000 files added (on-disk size: 54120.7 KB)
+0018.134 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 13100 files added (on-disk size: 54120.7 KB)
+0018.148 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 13200 files added (on-disk size: 54120.7 KB)
+0018.161 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 13300 files added (on-disk size: 54120.7 KB)
+0018.177 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 13400 files added (on-disk size: 54120.7 KB)
+0018.188 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 13500 files added (on-disk size: 54120.7 KB)
+0018.203 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 13600 files added (on-disk size: 54120.7 KB)
+0018.214 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 13700 files added (on-disk size: 54120.7 KB)
+0018.221 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (19.7 MB, 14823 files batched, 1001 (13782) added so far); re-opening (prior size: 54120.7 KB)
+0019.541 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: size is now: 65.60 MB
+0019.545 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 13800 files added (on-disk size: 67151.9 KB)
+0019.555 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 13900 files added (on-disk size: 67151.9 KB)
+0019.570 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 14000 files added (on-disk size: 67151.9 KB)
+0019.584 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 14100 files added (on-disk size: 67151.9 KB)
+0019.598 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 14200 files added (on-disk size: 67151.9 KB)
+0019.611 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 14300 files added (on-disk size: 67151.9 KB)
+0019.625 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 14400 files added (on-disk size: 67151.9 KB)
+0019.638 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 14500 files added (on-disk size: 67151.9 KB)
+0019.652 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 14600 files added (on-disk size: 67151.9 KB)
+0019.665 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 14700 files added (on-disk size: 67151.9 KB)
+0019.676 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 1000 files added on this batch (14.8 MB, 14823 files batched, 1001 (14783) added so far); re-opening (prior size: 67151.9 KB)
+0020.801 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.tmp: 14800 files added (on-disk size: 70929.7 KB)
+0021.171 (0) Creating zip file manifest (backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.list-temp.tmp)
+0021.201 (0) Successfully created zip file manifest (size: 1354857)
+0022.112 (0) Created plugins zip (0) - 71234.5 KB in 22 s (3231 KB/s) (sha1: d098fec0103935b6caf3003cfc2b6486369a2e89, sha256: 016a0de670a90f04ebf192ed4a644fde553d6571e2ff91e3892db55a1669218a)
+0022.125 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0022.126 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-ddc5482049678055a997915d0f2df693)
+0023.109 (0) Google Drive: quota usage: used=105 MB, total=3379200 MB, available=3379095 MB
+0023.110 (0) Google Drive: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip: Attempting to upload to Google Drive (into folder id: 12uZGp99K9sFBuco3OD0rSC2sxkgdCtjJ)
+0024.111 (0) Googledrive chunked upload: 1.4 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 20 / 40)
+0024.711 (0) Googledrive chunked upload: 4.3 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 20 / 40)
+0025.341 (0) Googledrive chunked upload: 10.1 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 20 / 40)
+0026.193 (0) Googledrive chunked upload: 21.6 % uploaded (15728640 - increasing chunk size to 16384 KB - memory usage: 20 / 40)
+0027.228 (0) Googledrive chunked upload: 44.6 % uploaded (32505856 - increasing chunk size to 32768 KB - memory usage: 20 / 40)
+0028.363 (0) Googledrive chunked upload: 90.6 % uploaded (66060288 - increasing chunk size to 65536 KB - memory usage: 20 / 40)
+0030.156 (0) Googledrive chunked upload: 100 % uploaded (66060288)
+0030.158 (0) Google Drive: OK: Archive backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip uploaded in 7.05 seconds
+0030.158 (0) Recording as successfully uploaded: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip
+0030.176 (0) Deleting local file: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip: OK
+0030.181 (0) Beginning creation of dump of themes (split every: 400 MB)
+0030.286 (0) Total entities for the zip file: 60 directories, 418 files (0 skipped as non-modified), 14.3 MB
+0030.300 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0030.313 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-themes.zip.tmp: 200 files added (on-disk size: 0 KB)
+0030.327 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-themes.zip.tmp: 300 files added (on-disk size: 0 KB)
+0030.340 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-themes.zip.tmp: 400 files added (on-disk size: 0 KB)
+0030.920 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-themes.zip.tmp: size is now: 12.80 MB
+0030.928 (0) Creating zip file manifest (backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-themes.zip.list-temp.tmp)
+0030.931 (0) Successfully created zip file manifest (size: 27210)
+0031.090 (0) Created themes zip (0) - 13144.8 KB in 0.9 s (14484.7 KB/s) (sha1: 1224ab8c77f946fb7ce55c8302c14a9b48ff0c50, sha256: 45c2dfb191563776b85729e66fde136157716b9dddc7b5263ed878300099fbe2)
+0031.093 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0031.094 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-ddc5482049678055a997915d0f2df693)
+0031.412 (0) Google Drive: quota usage: used=174.6 MB, total=3379200 MB, available=3379025.4 MB
+0031.413 (0) Google Drive: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-themes.zip: Attempting to upload to Google Drive (into folder id: 12uZGp99K9sFBuco3OD0rSC2sxkgdCtjJ)
+0032.127 (0) Googledrive chunked upload: 7.8 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 17.8 / 40)
+0032.685 (0) Googledrive chunked upload: 23.4 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 17.8 / 40)
+0033.289 (0) Googledrive chunked upload: 54.5 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 17.8 / 40)
+0034.971 (0) Googledrive chunked upload: 100 % uploaded (7340032)
+0034.974 (0) Google Drive: OK: Archive backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-themes.zip uploaded in 3.56 seconds
+0034.974 (0) Recording as successfully uploaded: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-themes.zip
+0034.980 (0) Deleting local file: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-themes.zip: OK
+0034.984 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots,wp-staging
+0034.984 (0) Looking for candidates to backup in: /home/u217525907/domains/ghostwhite-flamingo-672332.hostingersite.com/public_html/wp-content/uploads
+0034.985 (0) finding files: woocommerce-placeholder-768x768.webp: adding to list (1)
+0034.986 (0) finding files: woocommerce-placeholder.webp: adding to list (2)
+0034.986 (0) finding files: 2025: adding to list (3)
+0034.987 (0) finding files: trustindex-google-widget.css: adding to list (4)
+0034.987 (0) finding files: woocommerce_uploads: adding to list (5)
+0034.988 (0) finding files: woocommerce-placeholder-300x300.webp: adding to list (6)
+0034.988 (0) finding files: 2026: adding to list (7)
+0034.989 (0) finding files: wc-imports: adding to list (8)
+0034.989 (0) finding files: woocommerce-placeholder-100x100.webp: adding to list (9)
+0034.990 (0) finding files: pum: adding to list (10)
+0034.990 (0) finding files: woocommerce-placeholder-300x225.webp: adding to list (11)
+0034.991 (0) finding files: woocommerce-placeholder-150x150.webp: adding to list (12)
+0034.992 (0) finding files: woocommerce-placeholder-600x600.webp: adding to list (13)
+0034.992 (0) finding files: wpcf7_uploads: adding to list (14)
+0034.993 (0) finding files: woocommerce-placeholder-1024x1024.webp: adding to list (15)
+0034.993 (0) finding files: wc-logs: adding to list (16)
+0034.994 (0) finding files: fonts: adding to list (17)
+0034.994 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0035.113 (0) Total entities for the zip file: 12 directories, 530 files (0 skipped as non-modified), 79.2 MB
+0035.291 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-uploads.zip.tmp: 100 files added (on-disk size: 0 KB)
+0035.462 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-uploads.zip.tmp: 200 files added (on-disk size: 0 KB)
+0035.639 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-uploads.zip.tmp: 300 files added (on-disk size: 0 KB)
+0035.812 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-uploads.zip.tmp: 400 files added (on-disk size: 0 KB)
+0035.978 (0) Zip: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-uploads.zip.tmp: 500 files added (on-disk size: 0 KB)
+0036.821 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-uploads.zip.tmp: size is now: 79.20 MB
+0036.826 (0) Creating zip file manifest (backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-uploads.zip.list-temp.tmp)
+0036.828 (0) Successfully created zip file manifest (size: 36399)
+0038.038 (0) Created uploads zip (0) - 81073.5 KB in 3 s (26654.9 KB/s) (sha1: f5e53d5dddf2a7c9b5e1a02adb2dc1b3d16dbebe, sha256: a02d6f3d2c8ec29b515ddde32aec3a4c14d04b62d4f558490cefaa3d5fe438b0)
+0038.041 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0038.042 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-ddc5482049678055a997915d0f2df693)
+0038.305 (0) Google Drive: quota usage: used=187.4 MB, total=3379200 MB, available=3379012.6 MB
+0038.306 (0) Google Drive: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-uploads.zip: Attempting to upload to Google Drive (into folder id: 12uZGp99K9sFBuco3OD0rSC2sxkgdCtjJ)
+0039.304 (0) Googledrive chunked upload: 1.3 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 18 / 40)
+0039.640 (0) Googledrive chunked upload: 3.8 % uploaded (3145728 - increasing chunk size to 4096 KB - memory usage: 18 / 40)
+0040.259 (0) Googledrive chunked upload: 8.8 % uploaded (7340032 - increasing chunk size to 8192 KB - memory usage: 18 / 40)
+0040.960 (0) Googledrive chunked upload: 18.9 % uploaded (15728640 - increasing chunk size to 16384 KB - memory usage: 18 / 40)
+0041.788 (0) Googledrive chunked upload: 39.2 % uploaded (32505856 - increasing chunk size to 32768 KB - memory usage: 18 / 40)
+0043.051 (0) Googledrive chunked upload: 79.6 % uploaded (66060288 - increasing chunk size to 65536 KB - memory usage: 18 / 40)
+0044.891 (0) Googledrive chunked upload: 100 % uploaded (66060288)
+0044.894 (0) Google Drive: OK: Archive backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-uploads.zip uploaded in 6.59 seconds
+0044.895 (0) Recording as successfully uploaded: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-uploads.zip
+0044.923 (0) Deleting local file: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-uploads.zip: OK
+0044.928 (0) Beginning creation of dump of mu-plugins (split every: 400 MB)
+0044.930 (0) Total entities for the zip file: 1 directories, 2 files (0 skipped as non-modified), 0 MB
+0044.946 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-mu-plugins.zip.tmp: size is now: 0.00 MB
+0044.948 (0) Creating zip file manifest (backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-mu-plugins.zip.list-temp.tmp)
+0044.949 (0) Successfully created zip file manifest (size: 125)
+0044.954 (0) Created mu-plugins zip (0) - 5.1 KB in 0 s (216.5 KB/s) (sha1: 3111fac7d3d3b29c1857529632c05b1547795383, sha256: 2dd2657e7cbe8e3b5905e6d1967d208ab673e884c8835f849d92392a06ecd61b)
+0044.957 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0044.958 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-ddc5482049678055a997915d0f2df693)
+0045.226 (0) Google Drive: quota usage: used=187.4 MB, total=3379200 MB, available=3379012.6 MB
+0045.227 (0) Google Drive: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-mu-plugins.zip: Attempting to upload to Google Drive (into folder id: 12uZGp99K9sFBuco3OD0rSC2sxkgdCtjJ)
+0046.762 (0) Googledrive chunked upload: 100 % uploaded
+0046.767 (0) Google Drive: OK: Archive backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-mu-plugins.zip uploaded in 1.54 seconds
+0046.769 (0) Recording as successfully uploaded: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-mu-plugins.zip
+0046.771 (0) Deleting local file: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-mu-plugins.zip: OK
+0046.774 (0) Beginning backup of other directories found in the content directory (index: 0)
+0046.775 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0046.776 (0) Looking for candidates to backup in: /home/u217525907/domains/ghostwhite-flamingo-672332.hostingersite.com/public_html/wp-content
+0046.776 (0) finding files: plugins: skipping: this is the plugins directory
+0046.777 (0) finding files: upgrade: skipping: excluded by options
+0046.778 (0) finding files: themes: skipping: this is the themes directory
+0046.778 (0) finding files: index.php: adding to list (1)
+0046.779 (0) finding files: updraft: skipping: this is the updraft directory
+0046.779 (0) finding files: cache: skipping: excluded by options
+0046.780 (0) finding files: mu-plugins: skipping: this is the mu-plugins directory
+0046.780 (0) finding files: uploads: skipping: this is the uploads directory
+0046.781 (0) finding files: upgrade-temp-backup: adding to list (2)
+0046.782 (0) finding files: logs: adding to list (3)
+0046.787 (0) Total entities for the zip file: 4 directories, 6 files (0 skipped as non-modified), 0 MB
+0046.806 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-others.zip.tmp: size is now: 0.00 MB
+0046.809 (0) Creating zip file manifest (backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-others.zip.list-temp.tmp)
+0046.810 (0) Successfully created zip file manifest (size: 302)
+0046.815 (0) Created others zip (0) - 2.8 KB in 0 s (92.1 KB/s) (sha1: ebd17196ee41bb3a8c9e086be798b92aeec88401, sha256: 2b930fe30bba28481818bc2acdd36d633875e304fce90007689748a9f2bae081)
+0046.818 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0046.819 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-ddc5482049678055a997915d0f2df693)
+0047.191 (0) Google Drive: quota usage: used=266.6 MB, total=3379200 MB, available=3378933.4 MB
+0047.192 (0) Google Drive: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-others.zip: Attempting to upload to Google Drive (into folder id: 12uZGp99K9sFBuco3OD0rSC2sxkgdCtjJ)
+0048.693 (0) Googledrive chunked upload: 100 % uploaded
+0048.696 (0) Google Drive: OK: Archive backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-others.zip uploaded in 1.5 seconds
+0048.696 (0) Recording as successfully uploaded: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-others.zip
+0048.698 (0) Deleting local file: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-others.zip: OK
+0048.703 (0) Saving backup status to database (elements: 10)
+0048.708 (0) Beginning creation of database dump (WordPress DB)
+0048.709 (0) SQL compatibility mode is: NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+0048.711 (0) Testing potential mysqldump binary: /usr/bin/mysqldump
+0048.815 (0) Output: /*M!999999\- enable the sandbox mode */ \n/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\n/*!40103 SET TIME_ZONE='+00:00' */;\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\n/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\n/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;\n/*M!100616 SET @OLD_NOTE_VERBOSITY=@@NOTE_VERBOSITY, NOTE_VERBOSITY=0 */;\nDROP TABLE IF EXISTS `wp_options`;\n/*!40101 SET @saved_cs_client     = @@character_set_c (truncated - 1575 bytes total)
+0048.816 (0) Working binary mysqldump found: /usr/bin/mysqldump
+0048.829 (0) Table wp_options: Total expected rows (via COUNT): 912
+0048.947 (0) Table wp_options: Rows added in this batch (next record: 30257): 908 (uncompressed bytes in this segment=2924854) in 0.12 seconds
+0048.953 (0) Table wp_options: finishing file(s) (2, 422.7 KB)
+0048.959 (0) Table wp_users: Total expected rows (via COUNT): 9
+0048.964 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0048.967 (0) Table wp_users: Rows added in this batch (next record: 9): 9 (uncompressed bytes in this segment=3154) in 0.01 seconds
+0048.970 (0) Table wp_users: finishing file(s) (2, 1.5 KB)
+0048.976 (0) Table wp_usermeta: Total expected rows (via COUNT): 282
+0048.976 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0048.981 (0) Table wp_usermeta: Rows added in this batch (next record: 445): 282 (uncompressed bytes in this segment=18545) in 0.01 seconds
+0048.986 (0) Table wp_usermeta: finishing file(s) (2, 5.2 KB)
+0049.000 (0) Table wp_actionscheduler_actions: Total expected rows (approximate): 1783
+0049.063 (0) Table wp_actionscheduler_actions: Rows added in this batch (next record: 4104): 1789 (uncompressed bytes in this segment=722752) in 0.07 seconds
+0049.069 (0) Table wp_actionscheduler_actions: finishing file(s) (2, 52.9 KB)
+0049.073 (0) Table wp_actionscheduler_claims: Total expected rows (via COUNT): 0
+0049.075 (0) Table wp_actionscheduler_claims: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=627) in 0.00 seconds
+0049.079 (0) Table wp_actionscheduler_claims: finishing file(s) (2, 0.4 KB)
+0049.084 (0) Table wp_actionscheduler_groups: Total expected rows (via COUNT): 13
+0049.084 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.087 (0) Table wp_actionscheduler_groups: Rows added in this batch (next record: 13): 13 (uncompressed bytes in this segment=991) in 0.01 seconds
+0049.091 (0) Table wp_actionscheduler_groups: finishing file(s) (2, 0.5 KB)
+0049.094 (0) Table wp_actionscheduler_logs: Total expected rows (approximate): 5395
+0049.157 (0) Table wp_actionscheduler_logs: Rows added in this batch (next record: 12161): 5331 (uncompressed bytes in this segment=473132) in 0.06 seconds
+0049.161 (0) Table wp_actionscheduler_logs: finishing file(s) (2, 40 KB)
+0049.169 (0) Table wp_commentmeta: Total expected rows (via COUNT): 3
+0049.169 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.171 (0) Table wp_commentmeta: Rows added in this batch (next record: 3): 3 (uncompressed bytes in this segment=809) in 0.01 seconds
+0049.176 (0) Table wp_commentmeta: finishing file(s) (2, 0.5 KB)
+0049.180 (0) Table wp_comments: Total expected rows (via COUNT): 58
+0049.181 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.184 (0) Table wp_comments: Rows added in this batch (next record: 58): 58 (uncompressed bytes in this segment=19295) in 0.01 seconds
+0049.187 (0) Table wp_comments: finishing file(s) (2, 2 KB)
+0049.192 (0) Table wp_links: Total expected rows (via COUNT): 0
+0049.195 (0) Table wp_links: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1027) in 0.00 seconds
+0049.199 (0) Table wp_links: finishing file(s) (2, 0.5 KB)
+0049.208 (0) Table wp_postmeta: Total expected rows (approximate): 5071
+0049.260 (0) Table wp_postmeta: Rows added in this batch (next record: 6843): 5120 (uncompressed bytes in this segment=439195) in 0.06 seconds
+0049.266 (0) Table wp_postmeta: finishing file(s) (2, 57.3 KB)
+0049.278 (0) Table wp_posts: Total expected rows (via COUNT): 418
+0049.279 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.306 (0) Table wp_posts: Rows added in this batch (next record: 601): 418 (uncompressed bytes in this segment=561984) in 0.04 seconds
+0049.311 (0) Table wp_posts: finishing file(s) (2, 59.9 KB)
+0049.314 (0) Table wp_term_relationships: Total expected rows (approximate): 89
+0049.316 (0) Table wp_term_relationships: Rows added in this batch (next record: 100000): 89 (uncompressed bytes in this segment=1979) in 0.00 seconds
+0049.319 (0) Table wp_term_relationships: finishing file(s) (2, 0.6 KB)
+0049.324 (0) Table wp_term_taxonomy: Total expected rows (via COUNT): 29
+0049.325 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.327 (0) Table wp_term_taxonomy: Rows added in this batch (next record: 35): 29 (uncompressed bytes in this segment=1882) in 0.01 seconds
+0049.331 (0) Table wp_term_taxonomy: finishing file(s) (2, 0.7 KB)
+0049.336 (0) Table wp_termmeta: Total expected rows (via COUNT): 26
+0049.337 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.338 (0) Table wp_termmeta: Rows added in this batch (next record: 38): 26 (uncompressed bytes in this segment=1736) in 0.01 seconds
+0049.342 (0) Table wp_termmeta: finishing file(s) (2, 0.7 KB)
+0049.346 (0) Table wp_terms: Total expected rows (via COUNT): 29
+0049.347 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.348 (0) Table wp_terms: Rows added in this batch (next record: 35): 29 (uncompressed bytes in this segment=1647) in 0.00 seconds
+0049.353 (0) Table wp_terms: finishing file(s) (2, 0.7 KB)
+0049.358 (0) Table wp_wc_category_lookup: Total expected rows (approximate): 3
+0049.360 (0) Table wp_wc_category_lookup: Rows added in this batch (next record: 1000): 3 (uncompressed bytes in this segment=611) in 0.00 seconds
+0049.364 (0) Table wp_wc_category_lookup: finishing file(s) (2, 0.4 KB)
+0049.370 (0) Table wp_wc_product_meta_lookup: Total expected rows (via COUNT): 45
+0049.370 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.373 (0) Table wp_wc_product_meta_lookup: Rows added in this batch (next record: 598): 45 (uncompressed bytes in this segment=5909) in 0.01 seconds
+0049.376 (0) Table wp_wc_product_meta_lookup: finishing file(s) (2, 1 KB)
+0049.380 (0) Table wp_wc_reserved_stock: Total expected rows (approximate): 0
+0049.382 (0) Table wp_wc_reserved_stock: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=663) in 0.00 seconds
+0049.385 (0) Table wp_wc_reserved_stock: finishing file(s) (2, 0.4 KB)
+0049.389 (0) Table wp_wc_tax_rate_classes: Total expected rows (via COUNT): 2
+0049.390 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.392 (0) Table wp_wc_tax_rate_classes: Rows added in this batch (next record: 2): 2 (uncompressed bytes in this segment=750) in 0.00 seconds
+0049.396 (0) Table wp_wc_tax_rate_classes: finishing file(s) (2, 0.4 KB)
+0049.403 (0) Table wp_woocommerce_order_itemmeta: Total expected rows (via COUNT): 395
+0049.403 (0) Table is relatively small; fetch_rows will thus be: 500 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.408 (0) Table wp_woocommerce_order_itemmeta: Rows added in this batch (next record: 607): 395 (uncompressed bytes in this segment=15446) in 0.01 seconds
+0049.412 (0) Table wp_woocommerce_order_itemmeta: finishing file(s) (2, 3 KB)
+0049.418 (0) Table wp_woocommerce_payment_tokenmeta: Total expected rows (via COUNT): 0
+0049.419 (0) Table wp_woocommerce_payment_tokenmeta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=749) in 0.00 seconds
+0049.423 (0) Table wp_woocommerce_payment_tokenmeta: finishing file(s) (2, 0.4 KB)
+0049.428 (0) Table wp_grp_google_place: Total expected rows (via COUNT): 0
+0049.430 (0) Table wp_grp_google_place: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=892) in 0.00 seconds
+0049.434 (0) Table wp_grp_google_place: finishing file(s) (2, 0.4 KB)
+0049.438 (0) Table wp_grp_google_review: Total expected rows (via COUNT): 0
+0049.440 (0) Table wp_grp_google_review: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1113) in 0.00 seconds
+0049.444 (0) Table wp_grp_google_review: finishing file(s) (2, 0.5 KB)
+0049.448 (0) Table wp_grp_google_review_text: Total expected rows (via COUNT): 0
+0049.450 (0) Table wp_grp_google_review_text: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=669) in 0.00 seconds
+0049.455 (0) Table wp_grp_google_review_text: finishing file(s) (2, 0.4 KB)
+0049.463 (0) Table wp_grp_google_stats: Total expected rows (via COUNT): 0
+0049.464 (0) Table wp_grp_google_stats: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=647) in 0.01 seconds
+0049.469 (0) Table wp_grp_google_stats: finishing file(s) (2, 0.4 KB)
+0049.473 (0) Table wp_hostinger_reach_carts: Total expected rows (approximate): 0
+0049.474 (0) Table wp_hostinger_reach_carts: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=831) in 0.00 seconds
+0049.477 (0) Table wp_hostinger_reach_carts: finishing file(s) (2, 0.4 KB)
+0049.482 (0) Table wp_hostinger_reach_contact_lists: Total expected rows (via COUNT): 0
+0049.483 (0) Table wp_hostinger_reach_contact_lists: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=583) in 0.00 seconds
+0049.486 (0) Table wp_hostinger_reach_contact_lists: finishing file(s) (2, 0.3 KB)
+0049.490 (0) Table wp_hostinger_reach_forms: Total expected rows (via COUNT): 0
+0049.492 (0) Table wp_hostinger_reach_forms: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=786) in 0.00 seconds
+0049.495 (0) Table wp_hostinger_reach_forms: finishing file(s) (2, 0.4 KB)
+0049.501 (0) Table wp_jetpack_sync_queue: Total expected rows (via COUNT): 0
+0049.502 (0) Table wp_jetpack_sync_queue: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=789) in 0.00 seconds
+0049.506 (0) Table wp_jetpack_sync_queue: finishing file(s) (2, 0.4 KB)
+0049.511 (0) Table wp_newsletter: Total expected rows (via COUNT): 1
+0049.512 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.514 (0) Table wp_newsletter: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=4706) in 0.01 seconds
+0049.517 (0) Table wp_newsletter: finishing file(s) (2, 0.9 KB)
+0049.522 (0) Table wp_newsletter_emails: Total expected rows (via COUNT): 0
+0049.524 (0) Table wp_newsletter_emails: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1700) in 0.00 seconds
+0049.528 (0) Table wp_newsletter_emails: finishing file(s) (2, 0.6 KB)
+0049.533 (0) Table wp_newsletter_logs: Total expected rows (via COUNT): 0
+0049.534 (0) Table wp_newsletter_logs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=655) in 0.00 seconds
+0049.538 (0) Table wp_newsletter_logs: finishing file(s) (2, 0.4 KB)
+0049.541 (0) Table wp_newsletter_sent: Total expected rows (approximate): 0
+0049.543 (0) Table wp_newsletter_sent: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=798) in 0.00 seconds
+0049.547 (0) Table wp_newsletter_sent: finishing file(s) (2, 0.4 KB)
+0049.551 (0) Table wp_newsletter_stats: Total expected rows (via COUNT): 0
+0049.553 (0) Table wp_newsletter_stats: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=728) in 0.00 seconds
+0049.557 (0) Table wp_newsletter_stats: finishing file(s) (2, 0.4 KB)
+0049.563 (0) Table wp_newsletter_user_logs: Total expected rows (via COUNT): 0
+0049.564 (0) Table wp_newsletter_user_logs: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=658) in 0.00 seconds
+0049.569 (0) Table wp_newsletter_user_logs: finishing file(s) (2, 0.4 KB)
+0049.574 (0) Table wp_newsletter_user_meta: Total expected rows (via COUNT): 0
+0049.575 (0) Table wp_newsletter_user_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=611) in 0.00 seconds
+0049.578 (0) Table wp_newsletter_user_meta: finishing file(s) (2, 0.4 KB)
+0049.582 (0) Table wp_trustindex_google_reviews: Total expected rows (approximate): 10
+0049.585 (0) Table wp_trustindex_google_reviews: Rows added in this batch (next record: 1000): 10 (uncompressed bytes in this segment=5037) in 0.00 seconds
+0049.589 (0) Table wp_trustindex_google_reviews: finishing file(s) (2, 2.4 KB)
+0049.593 (0) Table wp_trustindex_google_views: Total expected rows (approximate): 1
+0049.594 (0) Table wp_trustindex_google_views: Rows added in this batch (next record: 1000): 1 (uncompressed bytes in this segment=562) in 0.00 seconds
+0049.598 (0) Table wp_trustindex_google_views: finishing file(s) (2, 0.3 KB)
+0049.604 (0) Table wp_wc_admin_note_actions: Total expected rows (via COUNT): 105
+0049.605 (0) Table is relatively small; fetch_rows will thus be: 200 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.608 (0) Table wp_wc_admin_note_actions: Rows added in this batch (next record: 12148): 105 (uncompressed bytes in this segment=21257) in 0.01 seconds
+0049.612 (0) Table wp_wc_admin_note_actions: finishing file(s) (2, 3.6 KB)
+0049.618 (0) Table wp_wc_admin_notes: Total expected rows (via COUNT): 78
+0049.619 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.625 (0) Table wp_wc_admin_notes: Rows added in this batch (next record: 80): 78 (uncompressed bytes in this segment=37329) in 0.01 seconds
+0049.630 (0) Table wp_wc_admin_notes: finishing file(s) (2, 8.9 KB)
+0049.634 (0) Table wp_wc_customer_lookup: Total expected rows (via COUNT): 7
+0049.635 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.637 (0) Table wp_wc_customer_lookup: Rows added in this batch (next record: 10): 7 (uncompressed bytes in this segment=2086) in 0.00 seconds
+0049.641 (0) Table wp_wc_customer_lookup: finishing file(s) (2, 0.8 KB)
+0049.646 (0) Table wp_wc_download_log: Total expected rows (via COUNT): 0
+0049.647 (0) Table wp_wc_download_log: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=716) in 0.00 seconds
+0049.650 (0) Table wp_wc_download_log: finishing file(s) (2, 0.4 KB)
+0049.655 (0) Table wp_wc_order_addresses: Total expected rows (via COUNT): 19
+0049.656 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.659 (0) Table wp_wc_order_addresses: Rows added in this batch (next record: 29): 19 (uncompressed bytes in this segment=3650) in 0.01 seconds
+0049.662 (0) Table wp_wc_order_addresses: finishing file(s) (2, 0.7 KB)
+0049.666 (0) Table wp_wc_order_coupon_lookup: Total expected rows (approximate): 1
+0049.669 (0) Table wp_wc_order_coupon_lookup: Rows added in this batch (next record: 1000): 1 (uncompressed bytes in this segment=807) in 0.00 seconds
+0049.672 (0) Table wp_wc_order_coupon_lookup: finishing file(s) (2, 0.4 KB)
+0049.676 (0) Table wp_wc_order_operational_data: Total expected rows (via COUNT): 19
+0049.676 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.679 (0) Table wp_wc_order_operational_data: Rows added in this batch (next record: 119): 19 (uncompressed bytes in this segment=4949) in 0.00 seconds
+0049.682 (0) Table wp_wc_order_operational_data: finishing file(s) (2, 1.5 KB)
+0049.685 (0) Table wp_wc_order_product_lookup: Total expected rows (approximate): 23
+0049.688 (0) Table wp_wc_order_product_lookup: Rows added in this batch (next record: 1000): 23 (uncompressed bytes in this segment=3359) in 0.00 seconds
+0049.692 (0) Table wp_wc_order_product_lookup: finishing file(s) (2, 1 KB)
+0049.696 (0) Table wp_wc_order_stats: Total expected rows (via COUNT): 19
+0049.697 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.699 (0) Table wp_wc_order_stats: Rows added in this batch (next record: 571): 19 (uncompressed bytes in this segment=3625) in 0.00 seconds
+0049.703 (0) Table wp_wc_order_stats: finishing file(s) (2, 1 KB)
+0049.708 (0) Table wp_wc_order_tax_lookup: Total expected rows (approximate): 0
+0049.710 (0) Table wp_wc_order_tax_lookup: Rows added in this batch (next record: 0): 0 (uncompressed bytes in this segment=793) in 0.00 seconds
+0049.714 (0) Table wp_wc_order_tax_lookup: finishing file(s) (2, 0.4 KB)
+0049.718 (0) Table wp_wc_orders: Total expected rows (via COUNT): 19
+0049.718 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.721 (0) Table wp_wc_orders: Rows added in this batch (next record: 571): 19 (uncompressed bytes in this segment=7637) in 0.01 seconds
+0049.724 (0) Table wp_wc_orders: finishing file(s) (2, 1.4 KB)
+0049.729 (0) Table wp_wc_orders_meta: Total expected rows (via COUNT): 227
+0049.730 (0) Table is relatively small; fetch_rows will thus be: 250 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.733 (0) Table wp_wc_orders_meta: Rows added in this batch (next record: 262): 227 (uncompressed bytes in this segment=18570) in 0.01 seconds
+0049.736 (0) Table wp_wc_orders_meta: finishing file(s) (2, 2.6 KB)
+0049.739 (0) Table wp_wc_product_attributes_lookup: Total expected rows (approximate): 7
+0049.744 (0) Table wp_wc_product_attributes_lookup: Rows added in this batch (next record: 1000): 7 (uncompressed bytes in this segment=1122) in 0.01 seconds
+0049.747 (0) Table wp_wc_product_attributes_lookup: finishing file(s) (2, 0.5 KB)
+0049.752 (0) Table wp_wc_product_download_directories: Total expected rows (via COUNT): 0
+0049.753 (0) Table wp_wc_product_download_directories: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=665) in 0.00 seconds
+0049.757 (0) Table wp_wc_product_download_directories: finishing file(s) (2, 0.4 KB)
+0049.762 (0) Table wp_wc_rate_limits: Total expected rows (via COUNT): 0
+0049.764 (0) Table wp_wc_rate_limits: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=684) in 0.00 seconds
+0049.768 (0) Table wp_wc_rate_limits: finishing file(s) (2, 0.4 KB)
+0049.772 (0) Table wp_wc_webhooks: Total expected rows (via COUNT): 0
+0049.774 (0) Table wp_wc_webhooks: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1071) in 0.00 seconds
+0049.778 (0) Table wp_wc_webhooks: finishing file(s) (2, 0.5 KB)
+0049.786 (0) Table wp_woocommerce_api_keys: Total expected rows (via COUNT): 1
+0049.786 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.788 (0) Table wp_woocommerce_api_keys: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=1132) in 0.01 seconds
+0049.792 (0) Table wp_woocommerce_api_keys: finishing file(s) (2, 0.6 KB)
+0049.797 (0) Table wp_woocommerce_attribute_taxonomies: Total expected rows (via COUNT): 3
+0049.797 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.799 (0) Table wp_woocommerce_attribute_taxonomies: Rows added in this batch (next record: 3): 3 (uncompressed bytes in this segment=1058) in 0.00 seconds
+0049.802 (0) Table wp_woocommerce_attribute_taxonomies: finishing file(s) (2, 0.5 KB)
+0049.806 (0) Table wp_woocommerce_downloadable_product_permissions: Total expected rows (via COUNT): 0
+0049.808 (0) Table wp_woocommerce_downloadable_product_permissions: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1454) in 0.00 seconds
+0049.810 (0) Table wp_woocommerce_downloadable_product_permissions: finishing file(s) (2, 0.5 KB)
+0049.816 (0) Table wp_woocommerce_log: Total expected rows (via COUNT): 0
+0049.817 (0) Table wp_woocommerce_log: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=642) in 0.00 seconds
+0049.822 (0) Table wp_woocommerce_log: finishing file(s) (2, 0.4 KB)
+0049.826 (0) Table wp_woocommerce_order_items: Total expected rows (via COUNT): 36
+0049.827 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.830 (0) Table wp_woocommerce_order_items: Rows added in this batch (next record: 60): 36 (uncompressed bytes in this segment=2674) in 0.01 seconds
+0049.833 (0) Table wp_woocommerce_order_items: finishing file(s) (2, 0.7 KB)
+0049.837 (0) Table wp_woocommerce_payment_tokens: Total expected rows (via COUNT): 0
+0049.839 (0) Table wp_woocommerce_payment_tokens: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=744) in 0.00 seconds
+0049.842 (0) Table wp_woocommerce_payment_tokens: finishing file(s) (2, 0.4 KB)
+0049.847 (0) Table wp_woocommerce_sessions: Total expected rows (via COUNT): 6
+0049.848 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.850 (0) Table wp_woocommerce_sessions: Rows added in this batch (next record: 58): 6 (uncompressed bytes in this segment=6061) in 0.00 seconds
+0049.858 (0) Table wp_woocommerce_sessions: finishing file(s) (2, 1.2 KB)
+0049.867 (0) Table wp_woocommerce_shipping_zone_locations: Total expected rows (via COUNT): 1
+0049.867 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.869 (0) Table wp_woocommerce_shipping_zone_locations: Rows added in this batch (next record: 2): 1 (uncompressed bytes in this segment=907) in 0.00 seconds
+0049.872 (0) Table wp_woocommerce_shipping_zone_locations: finishing file(s) (2, 0.4 KB)
+0049.877 (0) Table wp_woocommerce_shipping_zone_methods: Total expected rows (via COUNT): 1
+0049.878 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.879 (0) Table wp_woocommerce_shipping_zone_methods: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=849) in 0.00 seconds
+0049.883 (0) Table wp_woocommerce_shipping_zone_methods: finishing file(s) (2, 0.4 KB)
+0049.887 (0) Table wp_woocommerce_shipping_zones: Total expected rows (via COUNT): 1
+0049.887 (0) Table is relatively small; fetch_rows will thus be: 20 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.889 (0) Table wp_woocommerce_shipping_zones: Rows added in this batch (next record: 1): 1 (uncompressed bytes in this segment=686) in 0.00 seconds
+0049.893 (0) Table wp_woocommerce_shipping_zones: finishing file(s) (2, 0.4 KB)
+0049.897 (0) Table wp_woocommerce_tax_rate_locations: Total expected rows (via COUNT): 0
+0049.900 (0) Table wp_woocommerce_tax_rate_locations: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=786) in 0.00 seconds
+0049.904 (0) Table wp_woocommerce_tax_rate_locations: finishing file(s) (2, 0.4 KB)
+0049.908 (0) Table wp_woocommerce_tax_rates: Total expected rows (via COUNT): 0
+0049.909 (0) Table wp_woocommerce_tax_rates: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=1142) in 0.00 seconds
+0049.912 (0) Table wp_woocommerce_tax_rates: finishing file(s) (2, 0.4 KB)
+0049.915 (0) Table wp_wpmailsmtp_debug_events: Total expected rows (via COUNT): 26
+0049.916 (0) Table is relatively small; fetch_rows will thus be: 50 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0049.918 (0) Table wp_wpmailsmtp_debug_events: Rows added in this batch (next record: 26): 26 (uncompressed bytes in this segment=9673) in 0.00 seconds
+0049.922 (0) Table wp_wpmailsmtp_debug_events: finishing file(s) (2, 1.1 KB)
+0049.928 (0) Table wp_wpmailsmtp_tasks_meta: Total expected rows (via COUNT): 0
+0049.930 (0) Table wp_wpmailsmtp_tasks_meta: Rows added in this batch (next record: -1): 0 (uncompressed bytes in this segment=561) in 0.00 seconds
+0049.935 (0) Table wp_wpmailsmtp_tasks_meta: finishing file(s) (2, 0.3 KB)
+0049.941 (0) Table wp_wpml_mails: Total expected rows (via COUNT): 62
+0049.941 (0) Table is relatively small; fetch_rows will thus be: 100 (allow_further_reductions=1, is_first_fetch=1, known_bigger_than_table=1)
+0050.006 (0) Table wp_wpml_mails: Rows added in this batch (next record: 62): 62 (uncompressed bytes in this segment=1005390) in 0.07 seconds
+0050.010 (0) Table wp_wpml_mails: finishing file(s) (2, 91.5 KB)
+0050.013 (0) Table wp_wsal_metadata: Total expected rows (approximate): 24202
+0050.145 (0) Table wp_wsal_metadata: binary mysqldump finished (writes: 24339, bytes 1685185, return code 0) in 0.13 seconds
+0050.149 (0) Table wp_wsal_metadata: finishing file(s) (1, 187.7 KB)
+0050.161 (0) Table wp_wsal_occurrences: Total expected rows (approximate): 3547
+0050.236 (0) Table wp_wsal_occurrences: Rows added in this batch (next record: 3553): 3553 (uncompressed bytes in this segment=960440) in 0.08 seconds
+0050.240 (0) Table wp_wsal_occurrences: finishing file(s) (2, 54.2 KB)
+0050.240 (0) PHP event: code E_WARNING: filemtime(): stat failed for /home/u217525907/domains/ghostwhite-flamingo-672332.hostingersite.com/public_html/wp-content/updraft/backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db.gz (line 1923, wp-content/plugins/updraftplus/backup.php)
+0050.242 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_options.table.tmpr30258.gz (1/72/fopen): adding to final database dump
+0050.247 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_options.table.gz (2/72/fopen): adding to final database dump
+0050.248 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_users.table.tmpr10.gz (3/72/fopen): adding to final database dump
+0050.249 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_users.table.gz (4/72/fopen): adding to final database dump
+0050.249 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_usermeta.table.tmpr446.gz (5/72/fopen): adding to final database dump
+0050.250 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_usermeta.table.gz (6/72/fopen): adding to final database dump
+0050.251 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_actionscheduler_actions.table.tmpr4105.gz (7/72/fopen): adding to final database dump
+0050.252 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_actionscheduler_actions.table.gz (8/72/fopen): adding to final database dump
+0050.252 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_actionscheduler_claims.table.tmpr0.gz (9/72/fopen): adding to final database dump
+0050.255 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_actionscheduler_claims.table.gz (10/72/fopen): adding to final database dump
+0050.256 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_actionscheduler_groups.table.tmpr14.gz (11/72/fopen): adding to final database dump
+0050.256 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_actionscheduler_groups.table.gz (12/72/fopen): adding to final database dump
+0050.257 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_actionscheduler_logs.table.tmpr12162.gz (13/72/fopen): adding to final database dump
+0050.258 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_actionscheduler_logs.table.gz (14/72/fopen): adding to final database dump
+0050.259 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_commentmeta.table.tmpr4.gz (15/72/fopen): adding to final database dump
+0050.260 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_commentmeta.table.gz (16/72/fopen): adding to final database dump
+0050.260 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_comments.table.tmpr59.gz (17/72/fopen): adding to final database dump
+0050.261 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_comments.table.gz (18/72/fopen): adding to final database dump
+0050.261 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_links.table.tmpr0.gz (19/72/fopen): adding to final database dump
+0050.262 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_links.table.gz (20/72/fopen): adding to final database dump
+0050.263 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_postmeta.table.tmpr6844.gz (21/72/fopen): adding to final database dump
+0050.264 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_postmeta.table.gz (22/72/fopen): adding to final database dump
+0050.264 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_posts.table.tmpr602.gz (23/72/fopen): adding to final database dump
+0050.266 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_posts.table.gz (24/72/fopen): adding to final database dump
+0050.267 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_term_relationships.table.tmpr100001.gz (25/72/fopen): adding to final database dump
+0050.267 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_term_relationships.table.gz (26/72/fopen): adding to final database dump
+0050.268 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_term_taxonomy.table.tmpr36.gz (27/72/fopen): adding to final database dump
+0050.269 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_term_taxonomy.table.gz (28/72/fopen): adding to final database dump
+0050.269 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_termmeta.table.tmpr39.gz (29/72/fopen): adding to final database dump
+0050.270 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_termmeta.table.gz (30/72/fopen): adding to final database dump
+0050.271 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_terms.table.tmpr36.gz (31/72/fopen): adding to final database dump
+0050.272 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_terms.table.gz (32/72/fopen): adding to final database dump
+0050.273 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_category_lookup.table.tmpr1001.gz (33/72/fopen): adding to final database dump
+0050.273 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_category_lookup.table.gz (34/72/fopen): adding to final database dump
+0050.274 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_product_meta_lookup.table.tmpr599.gz (35/72/fopen): adding to final database dump
+0050.275 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_product_meta_lookup.table.gz (36/72/fopen): adding to final database dump
+0050.275 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_reserved_stock.table.tmpr1.gz (37/72/fopen): adding to final database dump
+0050.276 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_reserved_stock.table.gz (38/72/fopen): adding to final database dump
+0050.276 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_tax_rate_classes.table.tmpr3.gz (39/72/fopen): adding to final database dump
+0050.277 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_tax_rate_classes.table.gz (40/72/fopen): adding to final database dump
+0050.277 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_order_itemmeta.table.tmpr608.gz (41/72/fopen): adding to final database dump
+0050.278 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_order_itemmeta.table.gz (42/72/fopen): adding to final database dump
+0050.278 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_payment_tokenmeta.table.tmpr0.gz (43/72/fopen): adding to final database dump
+0050.279 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_payment_tokenmeta.table.gz (44/72/fopen): adding to final database dump
+0050.279 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_grp_google_place.table.tmpr0.gz (45/72/fopen): adding to final database dump
+0050.280 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_grp_google_place.table.gz (46/72/fopen): adding to final database dump
+0050.280 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_grp_google_review.table.tmpr0.gz (47/72/fopen): adding to final database dump
+0050.281 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_grp_google_review.table.gz (48/72/fopen): adding to final database dump
+0050.281 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_grp_google_review_text.table.tmpr0.gz (49/72/fopen): adding to final database dump
+0050.282 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_grp_google_review_text.table.gz (50/72/fopen): adding to final database dump
+0050.282 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_grp_google_stats.table.tmpr0.gz (51/72/fopen): adding to final database dump
+0050.283 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_grp_google_stats.table.gz (52/72/fopen): adding to final database dump
+0050.283 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_hostinger_reach_carts.table.tmpr1.gz (53/72/fopen): adding to final database dump
+0050.284 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_hostinger_reach_carts.table.gz (54/72/fopen): adding to final database dump
+0050.285 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_hostinger_reach_contact_lists.table.tmpr0.gz (55/72/fopen): adding to final database dump
+0050.285 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_hostinger_reach_contact_lists.table.gz (56/72/fopen): adding to final database dump
+0050.286 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_hostinger_reach_forms.table.tmpr0.gz (57/72/fopen): adding to final database dump
+0050.286 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_hostinger_reach_forms.table.gz (58/72/fopen): adding to final database dump
+0050.287 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_jetpack_sync_queue.table.tmpr0.gz (59/72/fopen): adding to final database dump
+0050.288 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_jetpack_sync_queue.table.gz (60/72/fopen): adding to final database dump
+0050.288 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter.table.tmpr2.gz (61/72/fopen): adding to final database dump
+0050.289 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter.table.gz (62/72/fopen): adding to final database dump
+0050.289 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter_emails.table.tmpr0.gz (63/72/fopen): adding to final database dump
+0050.290 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter_emails.table.gz (64/72/fopen): adding to final database dump
+0050.291 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter_logs.table.tmpr0.gz (65/72/fopen): adding to final database dump
+0050.291 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter_logs.table.gz (66/72/fopen): adding to final database dump
+0050.292 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter_sent.table.tmpr1.gz (67/72/fopen): adding to final database dump
+0050.292 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter_sent.table.gz (68/72/fopen): adding to final database dump
+0050.293 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter_stats.table.tmpr0.gz (69/72/fopen): adding to final database dump
+0050.293 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter_stats.table.gz (70/72/fopen): adding to final database dump
+0050.294 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter_user_logs.table.tmpr0.gz (71/72/fopen): adding to final database dump
+0050.295 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter_user_logs.table.gz (72/72/fopen): adding to final database dump
+0050.295 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter_user_meta.table.tmpr0.gz (73/72/fopen): adding to final database dump
+0050.296 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_newsletter_user_meta.table.gz (74/72/fopen): adding to final database dump
+0050.296 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_trustindex_google_reviews.table.tmpr1001.gz (75/72/fopen): adding to final database dump
+0050.297 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_trustindex_google_reviews.table.gz (76/72/fopen): adding to final database dump
+0050.298 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_trustindex_google_views.table.tmpr1001.gz (77/72/fopen): adding to final database dump
+0050.298 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_trustindex_google_views.table.gz (78/72/fopen): adding to final database dump
+0050.299 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_admin_note_actions.table.tmpr12149.gz (79/72/fopen): adding to final database dump
+0050.299 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_admin_note_actions.table.gz (80/72/fopen): adding to final database dump
+0050.300 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_admin_notes.table.tmpr81.gz (81/72/fopen): adding to final database dump
+0050.300 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_admin_notes.table.gz (82/72/fopen): adding to final database dump
+0050.301 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_customer_lookup.table.tmpr11.gz (83/72/fopen): adding to final database dump
+0050.301 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_customer_lookup.table.gz (84/72/fopen): adding to final database dump
+0050.302 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_download_log.table.tmpr0.gz (85/72/fopen): adding to final database dump
+0050.302 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_download_log.table.gz (86/72/fopen): adding to final database dump
+0050.303 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_order_addresses.table.tmpr30.gz (87/72/fopen): adding to final database dump
+0050.303 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_order_addresses.table.gz (88/72/fopen): adding to final database dump
+0050.304 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_order_coupon_lookup.table.tmpr1001.gz (89/72/fopen): adding to final database dump
+0050.304 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_order_coupon_lookup.table.gz (90/72/fopen): adding to final database dump
+0050.305 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_order_operational_data.table.tmpr120.gz (91/72/fopen): adding to final database dump
+0050.305 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_order_operational_data.table.gz (92/72/fopen): adding to final database dump
+0050.306 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_order_product_lookup.table.tmpr1001.gz (93/72/fopen): adding to final database dump
+0050.306 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_order_product_lookup.table.gz (94/72/fopen): adding to final database dump
+0050.306 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_order_stats.table.tmpr572.gz (95/72/fopen): adding to final database dump
+0050.307 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_order_stats.table.gz (96/72/fopen): adding to final database dump
+0050.307 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_order_tax_lookup.table.tmpr1.gz (97/72/fopen): adding to final database dump
+0050.308 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_order_tax_lookup.table.gz (98/72/fopen): adding to final database dump
+0050.308 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_orders.table.tmpr572.gz (99/72/fopen): adding to final database dump
+0050.310 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_orders.table.gz (100/72/fopen): adding to final database dump
+0050.310 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_orders_meta.table.tmpr263.gz (101/72/fopen): adding to final database dump
+0050.311 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_orders_meta.table.gz (102/72/fopen): adding to final database dump
+0050.311 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_product_attributes_lookup.table.tmpr1001.gz (103/72/fopen): adding to final database dump
+0050.312 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_product_attributes_lookup.table.gz (104/72/fopen): adding to final database dump
+0050.312 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_product_download_directories.table.tmpr0.gz (105/72/fopen): adding to final database dump
+0050.313 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_product_download_directories.table.gz (106/72/fopen): adding to final database dump
+0050.313 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_rate_limits.table.tmpr0.gz (107/72/fopen): adding to final database dump
+0050.314 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_rate_limits.table.gz (108/72/fopen): adding to final database dump
+0050.314 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_webhooks.table.tmpr0.gz (109/72/fopen): adding to final database dump
+0050.315 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wc_webhooks.table.gz (110/72/fopen): adding to final database dump
+0050.315 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_api_keys.table.tmpr2.gz (111/72/fopen): adding to final database dump
+0050.316 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_api_keys.table.gz (112/72/fopen): adding to final database dump
+0050.316 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_attribute_taxonomies.table.tmpr4.gz (113/72/fopen): adding to final database dump
+0050.317 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_attribute_taxonomies.table.gz (114/72/fopen): adding to final database dump
+0050.317 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_downloadable_product_permissions.table.tmpr0.gz (115/72/fopen): adding to final database dump
+0050.317 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_downloadable_product_permissions.table.gz (116/72/fopen): adding to final database dump
+0050.318 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_log.table.tmpr0.gz (117/72/fopen): adding to final database dump
+0050.318 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_log.table.gz (118/72/fopen): adding to final database dump
+0050.319 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_order_items.table.tmpr61.gz (119/72/fopen): adding to final database dump
+0050.319 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_order_items.table.gz (120/72/fopen): adding to final database dump
+0050.320 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_payment_tokens.table.tmpr0.gz (121/72/fopen): adding to final database dump
+0050.320 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_payment_tokens.table.gz (122/72/fopen): adding to final database dump
+0050.320 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_sessions.table.tmpr59.gz (123/72/fopen): adding to final database dump
+0050.321 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_sessions.table.gz (124/72/fopen): adding to final database dump
+0050.321 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_shipping_zone_locations.table.tmpr3.gz (125/72/fopen): adding to final database dump
+0050.322 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_shipping_zone_locations.table.gz (126/72/fopen): adding to final database dump
+0050.322 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_shipping_zone_methods.table.tmpr2.gz (127/72/fopen): adding to final database dump
+0050.323 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_shipping_zone_methods.table.gz (128/72/fopen): adding to final database dump
+0050.323 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_shipping_zones.table.tmpr2.gz (129/72/fopen): adding to final database dump
+0050.323 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_shipping_zones.table.gz (130/72/fopen): adding to final database dump
+0050.324 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_tax_rate_locations.table.tmpr0.gz (131/72/fopen): adding to final database dump
+0050.324 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_tax_rate_locations.table.gz (132/72/fopen): adding to final database dump
+0050.325 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_tax_rates.table.tmpr0.gz (133/72/fopen): adding to final database dump
+0050.325 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_woocommerce_tax_rates.table.gz (134/72/fopen): adding to final database dump
+0050.326 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wpmailsmtp_debug_events.table.tmpr27.gz (135/72/fopen): adding to final database dump
+0050.326 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wpmailsmtp_debug_events.table.gz (136/72/fopen): adding to final database dump
+0050.327 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wpmailsmtp_tasks_meta.table.tmpr0.gz (137/72/fopen): adding to final database dump
+0050.327 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wpmailsmtp_tasks_meta.table.gz (138/72/fopen): adding to final database dump
+0050.327 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wpml_mails.table.tmpr63.gz (139/72/fopen): adding to final database dump
+0050.329 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wpml_mails.table.gz (140/72/fopen): adding to final database dump
+0050.329 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wsal_metadata.table.gz (141/72/fopen): adding to final database dump
+0050.331 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wsal_occurrences.table.tmpr3554.gz (142/72/fopen): adding to final database dump
+0050.332 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db-table-wp_wsal_occurrences.table.gz (143/72/fopen): adding to final database dump
+0050.336 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db.gz: finished writing out complete database file (1025.8 KB)
+0050.372 (0) Total database tables backed up: 72 (backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db.gz, size: 1050526, sha1: 8783ccec27ba81588a1dc608d8c4d3656e9ac61c, sha256: b4318967cfde014baeaf1e0c0999fafce1530c9a0265d80711206ba2715dc285)
+0050.378 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip: plugins: This file has already been successfully uploaded
+0050.378 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-themes.zip: themes: This file has already been successfully uploaded
+0050.379 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-uploads.zip: uploads: This file has already been successfully uploaded
+0050.379 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-mu-plugins.zip: mu-plugins: This file has already been successfully uploaded
+0050.380 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-others.zip: others: This file has already been successfully uploaded
+0050.381 (0) backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db.gz: db: This file has not yet been successfully uploaded: will queue
+0050.381 (0) Saving backup history. Total backup size: 162.6 MB
+0050.384 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0050.386 (0) Cloud backup selection (1/1): googledrive with instance (1/1) (last)
+0050.387 (0) Beginning dispatch of backup to remote (googledrive) (instance identifier s-ddc5482049678055a997915d0f2df693)
+0050.572 (0) Google Drive: quota usage: used=266.6 MB, total=3379200 MB, available=3378933.4 MB
+0050.573 (0) Google Drive: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db.gz: Attempting to upload to Google Drive (into folder id: 12uZGp99K9sFBuco3OD0rSC2sxkgdCtjJ)
+0051.521 (0) Googledrive chunked upload: 99.8 % uploaded (1048576 - increasing chunk size to 2048 KB - memory usage: 18 / 44)
+0052.706 (0) Googledrive chunked upload: 100 % uploaded (1048576)
+0052.708 (0) Google Drive: OK: Archive backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db.gz uploaded in 2.13 seconds
+0052.708 (0) Recording as successfully uploaded: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db.gz
+0052.710 (0) Deleting local file: backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-db.gz: OK
+0052.711 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0052.712 (0) Number of backup sets in history: 3; groups (db): 1
+0052.712 (0) Examining (for databases) backup set with group_id=0, nonce=53a13f37c198, datestamp=1770674057 (Feb 09 2026 21:54:17)
+0052.713 (0) This backup set is the backup set just made, so will not be deleted.
+0052.713 (0) Examining (for databases) backup set with group_id=0, nonce=73c1d61d118b, datestamp=1770288434 (Feb 05 2026 10:47:14)
+0052.713 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0052.714 (0) Examining (for databases) backup set with group_id=0, nonce=2103d3343fe9, datestamp=1769595229 (Jan 28 2026 10:13:49)
+0052.714 (0) 1769595229: db: this set includes a database (backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-db.gz); db count is now 2
+0052.714 (0) 1769595229: db: over retain limit (2); will delete this database
+0052.714 (0) Delete file: backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-db.gz, service=googledrive
+0052.715 (0) Deleting local copy (backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-db.gz)
+0053.499 (0) Google Drive: backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-db.gz: Deletion failed: file was not found
+0053.502 (0) This backup set remains non-empty (f=1/d=0); will retain in history
+0053.502 (0) Number of backup sets in history: 3; groups (files): 1
+0053.503 (0) Examining (for files) backup set with nonce=53a13f37c198, datestamp=1770674057 (Feb 09 2026 21:54:17)
+0053.503 (0) This backup set is the backup set just made, so will not be deleted.
+0053.503 (0) This backup set is the backup set just made, so will not be deleted.
+0053.503 (0) This backup set is the backup set just made, so will not be deleted.
+0053.503 (0) This backup set is the backup set just made, so will not be deleted.
+0053.503 (0) This backup set is the backup set just made, so will not be deleted.
+0053.503 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0053.504 (0) Examining (for files) backup set with nonce=73c1d61d118b, datestamp=1770288434 (Feb 05 2026 10:47:14)
+0053.504 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0053.504 (0) Examining (for files) backup set with nonce=2103d3343fe9, datestamp=1769595229 (Jan 28 2026 10:13:49)
+0053.504 (0) plugins: over retain limit (2); will delete this file entity
+0053.504 (0) themes: over retain limit (2); will delete this file entity
+0053.504 (0) uploads: over retain limit (2); will delete this file entity
+0053.504 (0) mu-plugins: over retain limit (2); will delete this file entity
+0053.504 (0) others: over retain limit (2); will delete this file entity
+0053.504 (0) Delete file: backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-plugins.zip, service=googledrive
+0053.504 (0) Deleting local copy (backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-plugins.zip)
+0053.506 (0) Delete file: backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-themes.zip, service=googledrive
+0053.507 (0) Deleting local copy (backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-themes.zip)
+0053.507 (0) Delete file: backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-uploads.zip, service=googledrive
+0053.508 (0) Deleting local copy (backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-uploads.zip)
+0053.509 (0) Delete file: backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-mu-plugins.zip, service=googledrive
+0053.509 (0) Deleting local copy (backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-mu-plugins.zip)
+0053.510 (0) Delete file: backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-others.zip, service=googledrive
+0053.511 (0) Deleting local copy (backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-others.zip)
+0053.878 (0) Google Drive: backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-plugins.zip: Deletion failed: file was not found
+0053.879 (0) Google Drive: backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-themes.zip: Deletion failed: file was not found
+0053.880 (0) Google Drive: backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-uploads.zip: Deletion failed: file was not found
+0053.880 (0) Google Drive: backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-mu-plugins.zip: Deletion failed: file was not found
+0053.881 (0) Google Drive: backup_2026-01-28-1013_Matas_Tactical_Supply_2103d3343fe9-others.zip: Deletion failed: file was not found
+0053.884 (0) This backup set is now empty; will remove from history
+0053.884 (0) Deleting log file (log.2103d3343fe9.txt)
+0053.886 (0) Retain: saving new backup history (sets now: 2) and finishing retain operation
+0053.888 (0) Resume backup (53a13f37c198, 0): finish run
+0053.890 (0) Decremented the semaphore (fd) by 1
+0053.890 (0) Semaphore (fd) unlocked
+0053.891 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0053.894 (0) Deleting zip manifest (backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-plugins.zip.list.tmp)
+0053.896 (0) Deleting zip manifest (backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-themes.zip.list.tmp)
+0053.896 (0) Deleting zip manifest (backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-uploads.zip.list.tmp)
+0053.897 (0) Deleting zip manifest (backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-mu-plugins.zip.list.tmp)
+0053.898 (0) Deleting zip manifest (backup_2026-02-09-2154_Matas_Tactical_Supply_53a13f37c198-others.zip.list.tmp)
+0053.899 (0) No email will/can be sent - the user has not configured an email address.
+0053.899 (0) The backup succeeded and is now complete

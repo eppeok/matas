@@ -1912,6 +1912,35 @@ div#smw-global-seat-timer {
     font-weight: 500;
     font-size: 20px;
 }
+.featured_equipment .slide.equipment-card {
+width: 95% !important;
+}
+.testimonial .ti-widget.ti-goog .ti-review-item>.ti-inner, .ti-widget.ti-goog .ti-load-more-reviews-container .ti-load-more-reviews-button {
+border-top-width: 0px !important;
+border-bottom-width: 0px !important;
+border-left-width: 0px !important;
+border-right-width: 0px !important;
+background-color: #fff!important;
+backdrop-filter: blur(0px) !important;
+background: #fff !important;
+padding: 1.25rem 1.5rem !important;
+border-radius: 16px !important;
+box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2) !important;
+max-width: 390px !important;
+margin: 0 auto !important;
+text-align: left !important;
+min-height: 210px !important;
+border: 1px solid #F9F3F4 !important;
+}
+.testimonial .ti-widget.ti-goog .ti-col-4 .ti-review-item {
+-ms-flex: 0 0 25% !important;
+flex: 0 0 33.33% !important;
+max-width: 33.33% !important;
+}
+.testimonial .ti-widget.ti-goog .ti-reviews-container-wrapper {
+padding-bottom: 1px;
+padding-block: 0 20px;
+}
 /* div#smw-global-seat-timer {
     padding: 12px 10px;
     text-align: center;
